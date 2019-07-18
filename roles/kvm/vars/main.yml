@@ -1,0 +1,12 @@
+---
+# vars file for kvm
+
+kvm_required_packages_centos:
+  - qemu-kvm
+  - qemu-img
+  - libvirt
+  - libvirt-client
+  - libvirt-python
+  - libguestfs-tools
+  - virt-install
+  - bridge-utils

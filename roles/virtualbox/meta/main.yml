@@ -1,0 +1,26 @@
+galaxy_info:
+  author: Mihai Criveti
+  description: Cloud Native Competency Leader
+  company: Mihai Criveti
+  license: MIT
+  min_ansible_version: 2.4
+
+  # If this a Container Enabled role, provide the minimum Ansible Container version.
+  # min_ansible_container_version:
+
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+        - 30
+    - name: EL
+      versions:
+        - 7
+        - 8
+
+  galaxy_tags:
+    - virtualbox
+    - hypervisor
+    - virtualization
+
+# dependencies: []

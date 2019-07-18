@@ -1,0 +1,67 @@
+---
+# vars file for virtualbox
+
+vboxdrv_required_packages_rhel:
+  - binutils
+  - qt
+  - gcc
+  - make
+  - patch
+  - libgomp
+  - glibc-headers
+  - glibc-devel
+  - kernel-headers
+  - kernel-devel
+  - dkms
+
+vboxdrv_required_packages_centos:
+  - binutils
+  - qt
+  - gcc
+  - make
+  - patch
+  - libgomp
+  - glibc-headers
+  - glibc-devel
+  - kernel-headers
+  - kernel-devel
+  - dkms
+
+vboxdrv_required_packages_fedora:
+  - binutils
+  - qt
+  - gcc
+  - make
+  - patch
+  - libgomp
+  - glibc-headers
+  - glibc-devel
+  - kernel-headers
+  - kernel-devel
+  - dkms
+
+vboxdrv_required_packages_debian:
+  - binutils
+  - qt
+  - gcc
+  - make
+  - patch
+  - libgomp
+  - glibc-headers
+  - glibc-devel
+  - kernel-headers
+  - kernel-devel
+  - dkms
+
+vboxdrv_required_packages_ubuntu:
+  - binutils
+  - qt
+  - gcc
+  - make
+  - patch
+  - libgomp
+  - glibc-headers
+  - glibc-devel
+  - kernel-headers
+  - kernel-devel
+  - dkms

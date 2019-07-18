@@ -1,0 +1,18 @@
+---
+# Install VMware Workstation on CentOS
+
+- name: download VMware Workstation bundle
+  get_url:
+    dest: /tmp/vmware-workstation.bundle
+    url: "https://www.vmware.com/go/getworkstation-linux"
+    checksum: "sha256:55f8b9d4015fa958eba1aac72cc9985d34f22d1df5d027d7c34f1f4bf4f0c01d"
+    mode: "0777"
+
+- name: install VMware Workstation
+  command: /tmp/vmware-workstation.bundle --console --eulas-agreed --required
+  become: yes
+
+# Cleanup
+#- name: delete temporary files
+#  file: /tmp/vmware-workstation.bundle
+#  state: absent

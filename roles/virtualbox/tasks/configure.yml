@@ -1,0 +1,13 @@
+---
+- name: rebuild kernel modules
+  command: /usr/lib/virtualbox/vboxdrv.sh setup
+  become: True
+  # when systemctl status vboxdrv is old...
+
+- name: setup VirtualBox user
+  user:
+      name: "{{ item }}"
+      groups: vboxusers
+      append: yes
+  with_items: "{{ vbox_users }}"
+  when: setup_users

@@ -1,0 +1,25 @@
+---
+- name: Create extensions temporary directory
+  file:
+    path: /tmp/vbox-extpacks
+    state: directory
+    mode: '0777'
+
+- name: download extpack
+  get_url:
+    dest: /tmp/vbox-extpacks/
+    url: "{{ item }}"
+  with_items: "{{ virtualbox_extpack_urls }}"
+
+- name: List downloaded extpacks
+  find:
+    paths: /tmp/vbox-extpacks
+  register: extpacks
+
+- debug:
+    var: item.path
+  with_items: "{{ extpacks.files }}"
+
+- name: install extpacks
+  command: VBoxManage extpack install --replace "{{ item.path }}" --accept-license=56be48f923303c8cababb0bb4c478284b688ed23f16d775d729b89a2e8e5f9eb
+  with_items: "{{ extpacks.files }}"

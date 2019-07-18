@@ -1,0 +1,10 @@
+---
+# tasks file for virtualbox
+
+- include: install_CentOS.yml
+  when: ansible_facts['distribution'] == "CentOS"
+
+- include: configure.yml
+
+- include: extensions.yml
+  when: install_extpacks

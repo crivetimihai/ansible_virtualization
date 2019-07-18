@@ -1,0 +1,20 @@
+namespace: "crivetimihai"
+name: "virtualization"
+version: "1.0.1"
+readme: "README.md"
+authors:
+  - "Mihai Criveti (https://twitter.com/crivetimihai)"
+description: "Collection of Virtualization Software for Linux: VirtualBox, KVM, VMware."
+license:
+  - "MIT"
+tags:
+  - linux
+  - virtualization
+  - virtualbox
+  - kvm
+  - vmware
+  - collection
+repository: "https://www.github.com/crivetimihai/ansible_virtualization"
+homepage: "https://www.github.com/crivetimihai/ansible_virtualization"
+documentation: "https://www.github.com/crivetimihai/ansible_virtualization"
+issues: "https://www.github.com/crivetimihai/ansible_virtualization/issues"

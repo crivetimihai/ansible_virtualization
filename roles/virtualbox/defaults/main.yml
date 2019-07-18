@@ -1,0 +1,19 @@
+---
+# defaults file for virtualbox
+
+# Add users to 'vboxusers' group
+setup_users: yes
+
+# List of users to add to 'vboxusers' group
+vbox_users:
+  - vagrant
+
+# VirtualBox major version to install
+virtualbox_version: "6.0"
+
+# Install extensions listed in virtualbox_extpacks_urls
+install_extpacks: yes
+
+# List of VirtualBox extensions to install
+virtualbox_extpack_urls: 
+  - "https://download.virtualbox.org/virtualbox/6.0.8/Oracle_VM_VirtualBox_Extension_Pack-6.0.10.vbox-extpack"

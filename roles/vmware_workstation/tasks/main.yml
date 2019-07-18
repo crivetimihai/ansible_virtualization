@@ -1,0 +1,5 @@
+---
+# tasks file for vmware_workstation
+
+- include: install_CentOS.yml
+  when: ansible_facts['distribution'] == "CentOS"

@@ -1,0 +1,2 @@
+[centos7hosts]
+centos7 ansible_host=centos7 ansible_user=vagrant

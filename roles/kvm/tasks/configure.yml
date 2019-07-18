@@ -1,0 +1,8 @@
+---
+# Configure KVM and start libvirt service
+
+- name: Enable and start libvirtd service
+  systemd:
+    name: libvirtd
+    enabled: yes
+    state: started
