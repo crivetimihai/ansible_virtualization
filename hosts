@@ -1,4 +1,11 @@
-[rhhosts]
+[fedora]
 fedora30 ansible_host=fedora30 ansible_user=vagrant
+
+[fedora:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[centos]
 centos7 ansible_host=centos7 ansible_user=vagrant
+
+[rhel]
 rhel8 ansible_host=rhel8 ansible_user=vagrant
