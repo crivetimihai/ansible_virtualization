@@ -1,12 +1,11 @@
 ---
-# tasks file for docker_ce
+# tasks file for podman
 
-- name: End the play for hosts that run RHEL 8
+- name: End the play for hosts that run RHEL 6 or older
   meta: end_host
   when:
   - ansible_distribution == 'RedHat'
-  - ansible_distribution_version|int >= 8
-  - not force_docker_ce_on_rhel_8
+  - ansible_distribution_version|int  <= 6
 
 - include: install_CentOS.yml
   when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_version']|int <= 7

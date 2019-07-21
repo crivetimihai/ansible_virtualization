@@ -10,6 +10,11 @@
 - include: install_Fedora.yml
   when: ansible_facts['distribution'] == "Fedora"
 
-- include: configure.yml
+- include: install_Ubuntu.yml
+  when: ansible_facts['distribution'] == "Ubuntu"
 
 - include: selinux.yml
+  when: ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "Fedora" or ansible_facts['distribution'] == "CentOS"
+
+- include: configure.yml
+

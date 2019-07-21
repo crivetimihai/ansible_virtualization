@@ -12,6 +12,8 @@ vboxdrv_required_packages_centos_7:
   - glibc-devel
   - kernel-headers
   - kernel-devel
+  - "kernel-headers-{{ ansible_kernel }}"
+  - "kernel-devel-{{ ansible_kernel }}" 
   - dkms
 
 vboxdrv_required_packages_rhel_8:
@@ -25,6 +27,8 @@ vboxdrv_required_packages_rhel_8:
   - glibc-devel
   - kernel-headers
   - kernel-devel
+  - "kernel-headers-{{ ansible_kernel }}"
+  - "kernel-devel-{{ ansible_kernel }}"
   - dkms
 
 vboxdrv_required_packages_fedora_30:
@@ -38,4 +42,11 @@ vboxdrv_required_packages_fedora_30:
   - glibc-devel
   - kernel-headers
   - kernel-devel
+  - "kernel-headers-{{ ansible_kernel }}"
+  - "kernel-devel-{{ ansible_kernel }}"
   - dkms
+
+vboxdrv_required_packages_ubuntu_1804:
+  - build-essential
+  - gcc
+  - "linux-headers-{{ ansible_kernel }}"

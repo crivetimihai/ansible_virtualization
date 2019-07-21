@@ -1,0 +1,27 @@
+---
+# Install VirtualBox on Ubuntu
+
+- name: setup VirtualBox apt repository on Ubuntu
+  apt_repository:
+    repo: deb http://download.virtualbox.org/virtualbox/debian bionic contrib
+    state: present
+
+- name: add Virtualbox apt signing key
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items:
+    - https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    - https://www.virtualbox.org/download/oracle_vbox.asc
+
+- name: install VirtualBox
+  apt:
+    update_cache: yes
+    name: "virtualbox-{{ virtualbox_version }}"
+    state: present
+
+- name: install VirtualBox vboxdrv requirements on Ubuntu
+  apt:
+    name: "{{ vboxdrv_required_packages_ubuntu_1804 }}"
+    state: present
+  when: ansible_facts['distribution'] == "Ubuntu"

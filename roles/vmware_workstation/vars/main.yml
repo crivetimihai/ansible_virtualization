@@ -25,3 +25,8 @@ vmware_required_packages_fedora_30:
   - elfutils-libelf-devel
   - "@Development Tools"
   - ncurses-compat-libs
+
+vmware_required_packages_ubuntu_1804:
+  - build-essential
+  - gcc
+  - "linux-headers-{{ ansible_kernel }}"

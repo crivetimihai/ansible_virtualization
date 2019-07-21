@@ -10,6 +10,9 @@
 - include: install_Fedora.yml
   when: ansible_facts['distribution'] == "Fedora"
 
+- include: install_Ubuntu.yml
+  when: ansible_facts['distribution'] == "Ubuntu"
+
 - include: install_VMware.yml
 
 - include: patch_Fedora.yml

@@ -9,3 +9,6 @@ centos7 ansible_host=centos7 ansible_user=vagrant
 
 [rhel]
 rhel8 ansible_host=rhel8 ansible_user=vagrant
+
+[ubuntu]
+ubuntu1804 ansible_host=ubuntu1804 ansible_user=vagrant

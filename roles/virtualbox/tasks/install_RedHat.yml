@@ -34,14 +34,3 @@
     name: "{{ vboxdrv_required_packages_rhel_8 }}"
     state: present
   when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int == 7
-
-- name: register current kernel
-  command: "uname -r"
-  register: current_kernel
-  tags:
-    - skip_ansible_lint
-
-- name: install current kernel devel
-  yum:
-    name: "kernel-devel-{{ current_kernel.stdout }}"
-    state: present

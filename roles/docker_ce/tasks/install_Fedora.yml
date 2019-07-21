@@ -2,7 +2,7 @@
 # https://docs.docker.com/install/linux/docker-ce/fedora/
 
 - name: Uninstall old versions
-  yum:
+  dnf:
     name: >-
         docker, docker-client, docker-client-latest,
         docker-common, docker-latest, docker-latest-logrotate,

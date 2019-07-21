@@ -1,0 +1,14 @@
+---
+# defaults file for podman
+
+podman_packages:
+  - podman
+  - buildah
+  - skopeo
+
+ubuntu_prereq_packages:
+  - software-properties-common
+  - uidmap
+
+# echo 15659 > /proc/sys/user/max_user_namespaces
+proc_max_user_namespaces: "15659"

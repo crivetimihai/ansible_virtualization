@@ -7,6 +7,7 @@ Ansible Virtualization Collection
 - VirtualBox
 - VMware Workstation
 - Docker-CE
+- Podman (with Buildah and Skopeo)
 
 Tested on:
 ----------

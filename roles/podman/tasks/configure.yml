@@ -1,0 +1,10 @@
+---
+# Configure
+
+- name: set user.max_user_namespaces
+  sysctl:
+    name: user.max_user_namespaces
+    value: "{{ proc_max_user_namespaces }}"
+    sysctl_set: yes
+    state: present
+    reload: yes

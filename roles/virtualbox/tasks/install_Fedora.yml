@@ -22,14 +22,3 @@
     name: "{{ vboxdrv_required_packages_fedora_30 }}"
     state: present
   when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_major_version']|int >= 30
-
-- name: register current kernel
-  command: "uname -r"
-  register: current_kernel
-  tags:
-    - skip_ansible_lint
-
-- name: install current kernel devel
-  yum:
-    name: "kernel-devel-{{ current_kernel.stdout }}"
-    state: present

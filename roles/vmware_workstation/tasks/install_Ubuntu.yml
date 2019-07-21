@@ -1,0 +1,9 @@
+---
+# Install prereqs on Ubuntu
+
+- name: install requirements on Ubuntu 1804
+  apt:
+    update_cache: yes
+    name: "{{ vmware_required_packages_ubuntu_1804 }}"
+    state: present
+  when: ansible_facts['distribution'] == "Ubuntu"

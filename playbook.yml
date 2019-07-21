@@ -7,7 +7,8 @@
   #vars:
     #    ansible_python_interpreter: /usr/bin/python3
   roles:
+    #    - role: podman
     - role: docker_ce
-      #    - role: vmware_workstation
-      #    - role: kvm
-      #    - role: virtualbox
+    - role: vmware_workstation
+    - role: kvm
+    - role: virtualbox

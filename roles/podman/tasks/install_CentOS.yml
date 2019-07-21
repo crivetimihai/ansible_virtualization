@@ -1,0 +1,5 @@
+---
+- name: Install podman and tools
+  yum:
+    name: "{{ podman_packages }}"
+    state: present
