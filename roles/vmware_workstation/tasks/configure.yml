@@ -3,16 +3,24 @@
 
 - name: build VMware kernel modules
   command: vmware-modconfig --console --install-all
+  args:
+    creates:
+      - "/lib/modules/{{ ansible_kernel }}/misc/vmnet.ko"
   become: yes
 
 - name: load VMware kernel modules
-  command: modprobe -a vmw_vmci vmmon
+  modprobe:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - vmw_vmci
+    - vmmon
 
 - name: setup VMware Workstation license
   command: /usr/lib/vmware/bin/vmware-vmx-debug --new-sn "{{ vmware_workstation_license_key }}"
   when: vmware_workstation_license_key is defined
 
-- name: Create systemd /etc/systemd/system/vmware.service
+- name: Create systemd services
   copy:
     src: "{{ item }}"
     dest: /etc/systemd/system/
@@ -21,5 +29,4 @@
     mode: '0755'
   with_fileglob:
     - "*.service"
-
-
+  notify: reload systemd

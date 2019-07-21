@@ -13,4 +13,3 @@
 - include: configure.yml
 
 - include: selinux.yml
-

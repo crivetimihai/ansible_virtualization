@@ -25,4 +25,3 @@ vmware_required_packages_fedora_30:
   - elfutils-libelf-devel
   - "@Development Tools"
   - ncurses-compat-libs
-

@@ -10,4 +10,3 @@ cleanup_vmware_bundle: false
 fedora_30_vmware_patch_release: "w15.1.0-k5.1"
 fedora_30_vmware_patch_url: "https://github.com/mkubecek/vmware-host-modules/archive/{{ fedora_30_vmware_patch_release }}.tar.gz"
 fedora_30_vmware_patch_checksum: "sha256:5afcace6fc0b287d036d302af078ce22f1f7a33f8a4f6654f5f63b6b95e36dc5"
-
