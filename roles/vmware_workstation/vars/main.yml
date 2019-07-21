@@ -11,6 +11,7 @@ vmware_required_packages_centos_7:
 
 vmware_required_packages_rhel_8:
   - libXinerama
+  - libXtst
   - pcsc-lite-libs
   - kernel-devel
   - kernel-headers
@@ -22,7 +23,6 @@ vmware_required_packages_fedora_30:
   - kernel-devel
   - kernel-headers
   - elfutils-libelf-devel
-
   - "@Development Tools"
   - ncurses-compat-libs
 
