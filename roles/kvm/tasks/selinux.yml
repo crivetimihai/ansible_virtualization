@@ -1,0 +1,10 @@
+---
+# SELinux context for KVM
+# staff_use_svirt https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/configuring_and_managing_virtualization/index
+
+- name: Set SELinux booleans
+  seboolean:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    persistent: "{{ item.persistent | default('no') }}"
+  with_items: "{{ selinux_booleans }}"

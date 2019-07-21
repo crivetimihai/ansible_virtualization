@@ -1,7 +1,7 @@
 ---
 # vars file for virtualbox
 
-vboxdrv_required_packages_rhel:
+vboxdrv_required_packages_centos_7:
   - binutils
   - qt
   - gcc
@@ -14,7 +14,7 @@ vboxdrv_required_packages_rhel:
   - kernel-devel
   - dkms
 
-vboxdrv_required_packages_centos:
+vboxdrv_required_packages_rhel_8:
   - binutils
   - qt
   - gcc
@@ -27,33 +27,7 @@ vboxdrv_required_packages_centos:
   - kernel-devel
   - dkms
 
-vboxdrv_required_packages_fedora:
-  - binutils
-  - qt
-  - gcc
-  - make
-  - patch
-  - libgomp
-  - glibc-headers
-  - glibc-devel
-  - kernel-headers
-  - kernel-devel
-  - dkms
-
-vboxdrv_required_packages_debian:
-  - binutils
-  - qt
-  - gcc
-  - make
-  - patch
-  - libgomp
-  - glibc-headers
-  - glibc-devel
-  - kernel-headers
-  - kernel-devel
-  - dkms
-
-vboxdrv_required_packages_ubuntu:
+vboxdrv_required_packages_fedora_30:
   - binutils
   - qt
   - gcc

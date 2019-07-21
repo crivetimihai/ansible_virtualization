@@ -1,2 +1,4 @@
-[centos7hosts]
+[rhhosts]
+fedora30 ansible_host=fedora30 ansible_user=vagrant
 centos7 ansible_host=centos7 ansible_user=vagrant
+rhel8 ansible_host=rhel8 ansible_user=vagrant

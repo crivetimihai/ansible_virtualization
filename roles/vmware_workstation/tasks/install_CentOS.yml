@@ -1,18 +1,8 @@
 ---
-# Install VMware Workstation on CentOS
+# Install prereqs on CentOS 7
 
-- name: download VMware Workstation bundle
-  get_url:
-    dest: /tmp/vmware-workstation.bundle
-    url: "https://www.vmware.com/go/getworkstation-linux"
-    checksum: "sha256:55f8b9d4015fa958eba1aac72cc9985d34f22d1df5d027d7c34f1f4bf4f0c01d"
-    mode: "0777"
-
-- name: install VMware Workstation
-  command: /tmp/vmware-workstation.bundle --console --eulas-agreed --required
-  become: yes
-
-# Cleanup
-#- name: delete temporary files
-#  file: /tmp/vmware-workstation.bundle
-#  state: absent
+- name: install requirements on CentOS 7
+  yum:
+    name: "{{ vmware_required_packages_centos_7 }}"
+    state: present
+  when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version']|int == 7

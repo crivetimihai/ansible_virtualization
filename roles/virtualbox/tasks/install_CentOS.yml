@@ -1,10 +1,7 @@
 ---
-# Install VirtualBox on RedHat, CentOS or Fedora
+# Install VirtualBox on CentOS
 
-- debug:
-    var: ansible_facts
-
-- name: setup VirtualBox yum repository on RHEL / CentOS <= 7
+- name: setup VirtualBox yum repository on CentOS 7
   yum_repository:
     name: virtualbox
     description: Oracle Linux / RHEL / CentOS-$releasever / $basearch - VirtualBox
@@ -13,29 +10,31 @@
     gpgcheck: 1
     repo_gpgcheck: 1
     gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
-  when: ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version']|int <= 7
+  when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version']|int == 7
 
 - name: enable epel repository
   yum:
     name: epel-release
-    state: latest
+    state: present
 
 - name: install VirtualBox
   yum:
     name: "VirtualBox-{{ virtualbox_version }}.{{ ansible_architecture }}"
-    state: latest
+    state: present
 
-- name: install VirtualBox vboxdrv requirements on CentOS 7+
+- name: install VirtualBox vboxdrv requirements on CentOS 7
   yum:
-    name: "{{ vboxdrv_required_packages_centos }}"
-    state: latest
-  when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version']|int >= 7
+    name: "{{ vboxdrv_required_packages_centos_7 }}"
+    state: present
+  when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version']|int == 7
 
 - name: register current kernel
   command: "uname -r"
   register: current_kernel
+  tags:
+    - skip_ansible_lint
 
 - name: install current kernel devel
   yum:
     name: "kernel-devel-{{ current_kernel.stdout }}"
-    state: latest
+    state: present

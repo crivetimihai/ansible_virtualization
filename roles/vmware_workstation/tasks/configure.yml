@@ -1,0 +1,25 @@
+---
+# configure VMware Workstation and build kernel modules
+
+- name: build VMware kernel modules
+  command: vmware-modconfig --console --install-all
+  become: yes
+
+- name: load VMware kernel modules
+  command: modprobe -a vmw_vmci vmmon
+
+- name: setup VMware Workstation license
+  command: /usr/lib/vmware/bin/vmware-vmx-debug --new-sn "{{ vmware_workstation_license_key }}"
+  when: vmware_workstation_license_key is defined
+
+- name: Create systemd /etc/systemd/system/vmware.service
+  copy:
+    src: "{{ item }}"
+    dest: /etc/systemd/system/
+    owner: root
+    group: root
+    mode: '0755'
+  with_fileglob:
+    - "*.service"
+
+

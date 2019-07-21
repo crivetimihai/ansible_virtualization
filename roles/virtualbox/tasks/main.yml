@@ -4,6 +4,12 @@
 - include: install_CentOS.yml
   when: ansible_facts['distribution'] == "CentOS"
 
+- include: install_RedHat.yml
+  when: ansible_facts['distribution'] == "RedHat"
+
+- include: install_Fedora.yml
+  when: ansible_facts['distribution'] == "Fedora"
+
 - include: configure.yml
 
 - include: extensions.yml

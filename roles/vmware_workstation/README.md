@@ -11,7 +11,9 @@ Requirements
 Role Variables
 --------------
 
-- `kvm_required_packages_centos` - list of packages to install on CentOS. Defined in `vars/main.yml`.
+- `vmware_required_packages_centos_7`
+- `vmware_required_packages_rhel_8`
+- `vmware_required_packages_fedora_30`
 
 Dependencies
 ------------

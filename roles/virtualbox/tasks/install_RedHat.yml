@@ -1,0 +1,47 @@
+---
+# Install VirtualBox on RedHat
+
+- name: setup VirtualBox yum repository on RHEL <= 7
+  yum_repository:
+    name: virtualbox
+    description: Oracle Linux / RHEL / CentOS-$releasever / $basearch - VirtualBox
+    baseurl: http://download.virtualbox.org/virtualbox/rpm/el/$releasever/$basearch
+    enabled: 1
+    gpgcheck: 1
+    repo_gpgcheck: 1
+    gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
+  when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int <= 7
+
+# Temporary fix, for RHEL 8 (currently, distribution is not available)
+- name: setup VirtualBox yum repository on RHEL 8 (using Fedora 29 repo)
+  yum_repository:
+    name: virtualbox
+    description: Fedora $releasever - $basearch - VirtualBox
+    baseurl: http://download.virtualbox.org/virtualbox/rpm/fedora/29/$basearch
+    enabled: 1
+    gpgcheck: 1
+    repo_gpgcheck: 1
+    gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
+  when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int == 8
+
+- name: install VirtualBox
+  yum:
+    name: "VirtualBox-{{ virtualbox_version }}.{{ ansible_architecture }}"
+    state: present
+
+- name: install VirtualBox vboxdrv requirements on RHEL
+  yum:
+    name: "{{ vboxdrv_required_packages_rhel_8 }}"
+    state: present
+  when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int == 7
+
+- name: register current kernel
+  command: "uname -r"
+  register: current_kernel
+  tags:
+    - skip_ansible_lint
+
+- name: install current kernel devel
+  yum:
+    name: "kernel-devel-{{ current_kernel.stdout }}"
+    state: present

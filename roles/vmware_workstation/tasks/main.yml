@@ -3,3 +3,16 @@
 
 - include: install_CentOS.yml
   when: ansible_facts['distribution'] == "CentOS"
+
+- include: install_RedHat.yml
+  when: ansible_facts['distribution'] == "RedHat"
+
+- include: install_Fedora.yml
+  when: ansible_facts['distribution'] == "Fedora"
+
+- include: install_VMware.yml
+
+- include: patch_Fedora.yml
+  when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_major_version']|int == 30
+
+- include: configure.yml

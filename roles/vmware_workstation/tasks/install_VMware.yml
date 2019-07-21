@@ -1,0 +1,28 @@
+---
+# Install VMware Workstation
+# https://docs.vmware.com/en/VMware-Workstation-Pro/15.0/com.vmware.ws.using.doc/GUID-42F4754B-7547-4A4D-AC08-353D321A051B.html
+
+- name: download VMware Workstation bundle
+  get_url:
+    dest: /tmp/vmware-workstation.bundle
+    url: "{{ vmware_bundle_url }}"
+    checksum: "{{ vmware_bundle_checksum }}"
+    mode: "0777"
+
+- name: Ensure /etc/init.d directory exists
+  file:
+    path: /etc/init.d
+    state: directory
+    mode: '0755'
+
+- name: install VMware Workstation
+  command: /tmp/vmware-workstation.bundle --console --eulas-agreed --required
+  become: true
+  args:
+    creates: /usr/bin/vmware
+
+- name: delete temporary download files
+  file:
+    path: /tmp/vmware-workstation.bundle
+    state: absent
+  when: cleanup_vmware_bundle

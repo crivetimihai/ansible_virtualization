@@ -1,12 +1,45 @@
 ---
 # vars file for kvm
 
-kvm_required_packages_centos:
+kvm_required_packages_centos_7:
+  - policycoreutils-python
   - qemu-kvm
   - qemu-img
   - libvirt
   - libvirt-client
   - libvirt-python
+  - libvirt-nss
   - libguestfs-tools
   - virt-install
   - bridge-utils
+  - virt-top
+  - genisoimage
+
+kvm_required_packages_rhel_8:
+  - policycoreutils-python-utils
+  - qemu-kvm
+  - qemu-img
+  - libvirt
+  - libvirt-client
+  - python3-libvirt
+  - libvirt-nss
+  - libguestfs-tools
+  - virt-install
+  - virt-top
+  - genisoimage
+
+kvm_required_packages_fedora_30:
+  - policycoreutils-python-utils
+  - qemu-kvm
+  - qemu-img
+  - libvirt
+  - libvirt-client
+  - python3-libvirt
+  - libvirt-nss
+  - libguestfs-tools
+  - virt-install
+  - virt-top
+  - genisoimage
+
+selinux_booleans:
+  - {name: staff_use_svirt, state: yes, persistent: yes}
