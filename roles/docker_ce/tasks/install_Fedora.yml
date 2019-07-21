@@ -1,0 +1,22 @@
+---
+# https://docs.docker.com/install/linux/docker-ce/fedora/
+
+- name: Uninstall old versions
+  yum:
+    name: >-
+        docker, docker-client, docker-client-latest,
+        docker-common, docker-latest, docker-latest-logrotate,
+        docker-logrotate, docker-selinux, docker-engine-selinux, docker-engine
+    state: absent
+
+- name: Setup yum repository
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    checksum: "sha256:6650718e0fe5202ae7618521f695d43a8bc051c539d7570f0edbfa5b4916f218"
+    dest: /etc/yum.repos.d/docker-ce.repo
+    mode: '0644'
+
+- name: Install Docker-CE
+  dnf:
+    name: docker-ce, docker-ce-cli, containerd.io
+    state: present

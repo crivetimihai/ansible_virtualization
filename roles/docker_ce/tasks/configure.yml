@@ -1,0 +1,25 @@
+---
+# Configure docker groups
+- name: Create the docker group
+  group:
+      name: docker
+      state: present
+
+- name: Add users to the docker secondary group
+  user:
+    name: "{{ item }}"
+    append: yes
+    groups: docker
+  become: yes
+  with_items: "{{ docker_users }}"
+
+- name: Reset ssh connection to allow user changes to affect current user
+  meta: reset_connection
+
+- name: Restart the docker service
+  systemd:
+      name: docker
+      enabled: yes
+      state: started
+  become: yes
+
