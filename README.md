@@ -6,6 +6,7 @@ Ansible Virtualization Collection
 - KVM
 - VirtualBox
 - VMware Workstation
+- Docker-CE
 
 Tested on:
 ----------
