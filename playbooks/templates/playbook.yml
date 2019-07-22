@@ -1,12 +1,15 @@
 ---
-# ansible-playbook -i hosts playbook.yml
-- hosts: all
-  connection: ssh
+# ansible-playbook -i localhost, playbook.yml
+
+- name: setup a virtualization environment
+  hosts: all
+  connection: local
   become: yes
   gather_facts: yes
-  #vars:
-    #    ansible_python_interpreter: /usr/bin/python3
   roles:
-    - role: vmware_workstation
-    - role: kvm
-    - role: virtualbox
+    - role: crivetimihai.virtualization.kvm
+    - role: crivetimihai.virtualization.lxd
+    - role: crivetimihai.virtualization.vmware_workstation
+    - role: crivetimihai.virtualization.virtualbox
+    - role: crivetimihai.virtualization.podman
+    - role: crivetimihai.virtualization.docker_ce

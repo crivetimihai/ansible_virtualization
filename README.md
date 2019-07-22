@@ -22,7 +22,30 @@ Tested on:
 Example
 -------
 
+### Install the role:
+
+```bash
+pip install --upgrade mazer
+mazer install crivetimihai.virtualization
 ```
-ansible-playbook -i hosts playbook.yml -e "vmware_workstation_license_key='XXXXX-XXXXX...'"
+
+
+### playbook.yml example
+
+```yaml
+# ansible-playbook -i localhost, playbook.yml -e "vmware_workstation_license_key='XXXXX-XX...'"
+
+- name: setup a virtualization environment
+  hosts: all
+  connection: local
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: crivetimihai.virtualization.kvm
+    - role: crivetimihai.virtualization.lxd
+    - role: crivetimihai.virtualization.vmware_workstation
+    - role: crivetimihai.virtualization.virtualbox
+    - role: crivetimihai.virtualization.podman
+    - role: crivetimihai.virtualization.docker_ce
 ```
 
