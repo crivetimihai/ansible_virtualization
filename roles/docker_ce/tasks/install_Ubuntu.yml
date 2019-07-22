@@ -30,5 +30,5 @@
 - name: Install Docker-CE
   apt:
     update_cache: yes
-    name: "{{ ubuntu_docker_packages}}"
+    name: "{{ ubuntu_docker_packages }}"
     state: present

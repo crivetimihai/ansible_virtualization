@@ -17,4 +17,3 @@
   when: ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "Fedora" or ansible_facts['distribution'] == "CentOS"
 
 - include: configure.yml
-
