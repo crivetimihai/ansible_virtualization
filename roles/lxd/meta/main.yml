@@ -1,6 +1,6 @@
 galaxy_info:
   author: Mihai Criveti
-  description: Cloud Native Competency Leader
+  description: LXC/LXD
   company: Mihai Criveti
   license: MIT
   min_ansible_version: 2.4
@@ -18,10 +18,10 @@ galaxy_info:
         - 7
     - name: Ubuntu
       versions:
-        - 18.04
+        - bionic
     - name: Debian
       versions:
-        - 10
+        - buster
 
   galaxy_tags:
     - lxd

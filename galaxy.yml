@@ -1,10 +1,10 @@
 namespace: "crivetimihai"
 name: "virtualization"
-version: "1.0.9"
+version: "1.0.11"
 readme: "README.md"
 authors:
   - "Mihai Criveti (https://twitter.com/crivetimihai)"
-description: "Collection of Virtualization Software for Linux: VirtualBox, KVM, VMware, Docker-CE, Podman"
+description: "Collection of Virtualization Software for Linux: VirtualBox, KVM, VMware, LXD, Docker-CE, Podman"
 license:
   - "MIT"
 tags:

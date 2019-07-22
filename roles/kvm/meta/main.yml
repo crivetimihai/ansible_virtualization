@@ -1,6 +1,6 @@
 galaxy_info:
   author: Mihai Criveti
-  description: Cloud Native Competency Leader
+  description: KVM
   company: Mihai Criveti
   license: MIT
   min_ansible_version: 2.4
@@ -19,10 +19,10 @@ galaxy_info:
         - 8
     - name: Ubuntu
       versions:
-        - 18.04
+        - bionic
     - name: Debian
       versions:
-        - 10
+        - buster
 
   galaxy_tags:
     - kvm
