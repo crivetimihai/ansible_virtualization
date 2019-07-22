@@ -28,5 +28,14 @@ vmware_required_packages_fedora_30:
 
 vmware_required_packages_ubuntu_1804:
   - build-essential
+  - libncursesw5
   - gcc
+  - libpcsclite1
+  - "linux-headers-{{ ansible_kernel }}"
+
+vmware_required_packages_debian_10:
+  - build-essential
+  - libncursesw5
+  - gcc
+  - libpcsclite1
   - "linux-headers-{{ ansible_kernel }}"

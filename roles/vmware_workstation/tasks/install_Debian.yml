@@ -1,0 +1,9 @@
+---
+# Install prereqs on Debian
+
+- name: install requirements on Debian 10
+  apt:
+    update_cache: yes
+    name: "{{ vmware_required_packages_debian_10 }}"
+    state: present
+  when: ansible_facts['distribution'] == "Debian"
