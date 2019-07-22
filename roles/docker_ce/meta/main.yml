@@ -17,9 +17,20 @@ galaxy_info:
       versions:
         - 7
         - 8
+    - name: Ubuntu
+      versions:
+        - 18.04
+    - name: Debian
+      versions:
+        - 10
 
   galaxy_tags:
     - docker
     - virtualization
+    - debian
+    - ubuntu
+    - rhel
+    - centos
+    - fedora
 
 # dependencies: []

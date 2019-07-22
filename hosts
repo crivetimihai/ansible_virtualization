@@ -12,3 +12,6 @@ rhel8 ansible_host=rhel8 ansible_user=vagrant
 
 [ubuntu]
 ubuntu1804 ansible_host=ubuntu1804 ansible_user=vagrant
+
+[debian]
+debian10 ansible_host=debian10 ansible_user=vagrant

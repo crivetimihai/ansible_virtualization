@@ -1,0 +1,20 @@
+---
+# Install snap on CentOS
+
+- name: install epel-release
+  yum:
+    name: epel-release
+    state: present
+
+- name: install snapd
+  yum:
+    name: snapd
+    state: present
+
+- name: create /snap symlink
+  file:
+    state: link
+    src: /var/lib/snapd/snap
+    dest: /snap
+    owner: root
+    group: root

@@ -1,0 +1,5 @@
+---
+# defaults file for lxd
+
+lxd_users:
+  - "{{ ansible_user }}"

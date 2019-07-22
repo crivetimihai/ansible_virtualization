@@ -1,0 +1,24 @@
+---
+# tasks file for lxd
+
+- name: End the play for hosts that run RHEL 8 or newer, as lxd is not supported
+  meta: end_host
+  when:
+  - ansible_distribution == 'RedHat'
+  - ansible_distribution_version|int  >= 8
+
+- include: install_CentOS.yml
+  when: ansible_facts['distribution'] == "CentOS"
+
+- include: install_Fedora.yml
+  when: ansible_facts['distribution'] == "Fedora"
+
+- include: install_Ubuntu.yml
+  when: ansible_facts['distribution'] == "Ubuntu"
+
+- include: install_Debian.yml
+  when: ansible_facts['distribution'] == "Debian"
+
+- include: snap.yml
+
+- include: configure.yml

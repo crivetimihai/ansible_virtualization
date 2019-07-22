@@ -1,8 +1,14 @@
 ---
+
+- name: check kernel module status
+  command: /usr/lib/virtualbox/vboxdrv.sh status
+  register: vboxdrv_status
+  changed_when: False
+
 - name: rebuild kernel modules
   command: /usr/lib/virtualbox/vboxdrv.sh setup
   become: True
-  # when systemctl status vboxdrv is old...
+  when: "'is loaded' not in vboxdrv_status.stdout"
 
 - name: setup VirtualBox user
   user:

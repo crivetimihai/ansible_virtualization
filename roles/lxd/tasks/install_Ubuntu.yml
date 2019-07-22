@@ -1,0 +1,8 @@
+---
+# Install snap on Ubuntu
+
+- name: install snapd
+  apt:
+    update_cache: yes
+    name: snapd
+    state: present

@@ -1,6 +1,6 @@
 namespace: "crivetimihai"
 name: "virtualization"
-version: "1.0.8"
+version: "1.0.9"
 readme: "README.md"
 authors:
   - "Mihai Criveti (https://twitter.com/crivetimihai)"
@@ -10,11 +10,16 @@ license:
 tags:
   - linux
   - virtualization
+  - hypervisor
   - virtualbox
   - kvm
+  - lxd
+  - lxc
   - vmware
   - docker
   - podman
+  - buildah
+  - skopeo
   - collection
 repository: "https://www.github.com/crivetimihai/ansible_virtualization"
 homepage: "https://www.github.com/crivetimihai/ansible_virtualization"

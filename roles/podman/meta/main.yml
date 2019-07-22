@@ -15,13 +15,24 @@ galaxy_info:
         - 30
     - name: EL
       versions:
+        - 7
         - 8
+    - name: Ubuntu
+      versions:
+        - 18.04
+    - name: Debian
+      versions:
+        - 10
 
   galaxy_tags:
     - podman
+    - skopeo
     - buildah
-    - rhel
-    - docker
     - virtualization
+    - debian
+    - ubuntu
+    - rhel
+    - centos
+    - fedora
 
 # dependencies: []

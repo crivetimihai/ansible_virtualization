@@ -33,7 +33,6 @@ theme:
     font:
         text: 'IBM Plex Sans'
         code: 'IBM Plex Mono'
-#    logo: 'ibm.svg'
     logo:
         icon: 'cloud'
     favicon: 'theme/favicon.ico'
@@ -84,6 +83,7 @@ nav:
     - VirtualBox: virtualization/virtualbox.md
     - KVM: virtualization/kvm.md
     - VMware: virtualization/vmware.md
+    - VMware: virtualization/lxd.md
     - Podman: virtualization/podman.md
     - Docker: virtualization/docker-ce.md
  

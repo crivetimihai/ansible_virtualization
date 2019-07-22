@@ -1,0 +1,14 @@
+---
+# Install lxd from snap
+
+- name: restart the snapd service
+  systemd:
+      name: snapd.service
+      enabled: yes
+      state: restarted
+  become: yes
+
+- name: install lxd snap
+  snap:
+    name:
+      - lxd

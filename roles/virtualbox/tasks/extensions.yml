@@ -20,6 +20,14 @@
     var: item.path
   with_items: "{{ extpacks.files }}"
 
+- name: check installed extpacks
+  shell: |
+      set -o pipefail
+      vboxmanage list extpacks | grep Usable
+  register: extpack_installed
+  changed_when: False
+
 - name: install extpacks
   command: VBoxManage extpack install --replace "{{ item.path }}" --accept-license=56be48f923303c8cababb0bb4c478284b688ed23f16d775d729b89a2e8e5f9eb
   with_items: "{{ extpacks.files }}"
+  when: "'false' not in extpack_installed.stdout"

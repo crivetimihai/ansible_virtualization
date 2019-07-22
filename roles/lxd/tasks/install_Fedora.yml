@@ -1,0 +1,33 @@
+---
+# Install snap on Fedora
+
+- name: install snapd
+  dnf:
+    name: snapd
+    state: present
+
+- name: create /snap symlink
+  file:
+    state: link
+    src: /var/lib/snapd/snap
+    dest: /snap
+    owner: root
+    group: root
+
+- name: check if module was loaded
+  shell: |
+      set -o pipefail
+      semodule -l | grep '^snap$'
+  register: semodule_loaded
+  changed_when: False
+
+- name: copy policy
+  copy:
+    src: snap.pp
+    dest: /tmp/snap.pp
+  when: "'snap' not in semodule_loaded.stdout"
+
+- name: setup snap selinux policy
+  command: semodule -i /tmp/snap.pp
+  become: yes
+  when: "'snap' not in semodule_loaded.stdout"

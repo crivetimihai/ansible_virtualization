@@ -1,0 +1,21 @@
+---
+# Configure snap
+
+- name: add users to the lxd secondary group
+  user:
+    name: "{{ item }}"
+    append: yes
+    groups: lxd
+  become: yes
+  with_items: "{{ lxd_users }}"
+
+- name: Reset ssh connection to allow user changes to affect current user
+  meta: reset_connection
+
+- name: /snap/bin/lxd init --auto
+  command: /snap/bin/lxd init --auto
+  args:
+    creates: /var/snap/lxd/common/lxd/storage-pools/default
+  become: no
+  become_user: "{{ item }}"
+  with_items: "{{ lxd_users }}"
