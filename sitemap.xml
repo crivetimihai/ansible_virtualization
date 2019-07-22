@@ -2,32 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://github.com/crivetimihai/ansible_virtualization/</loc>
-     <lastmod>2019-07-21</lastmod>
+     <lastmod>2019-07-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/crivetimihai/ansible_virtualization/virtualization/virtualbox/</loc>
-     <lastmod>2019-07-21</lastmod>
+     <lastmod>2019-07-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/crivetimihai/ansible_virtualization/virtualization/kvm/</loc>
-     <lastmod>2019-07-21</lastmod>
+     <lastmod>2019-07-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/crivetimihai/ansible_virtualization/virtualization/vmware/</loc>
-     <lastmod>2019-07-21</lastmod>
+     <lastmod>2019-07-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/crivetimihai/ansible_virtualization/virtualization/lxd/</loc>
+     <lastmod>2019-07-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/crivetimihai/ansible_virtualization/virtualization/podman/</loc>
-     <lastmod>2019-07-21</lastmod>
+     <lastmod>2019-07-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/crivetimihai/ansible_virtualization/virtualization/docker-ce/</loc>
-     <lastmod>2019-07-21</lastmod>
+     <lastmod>2019-07-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
