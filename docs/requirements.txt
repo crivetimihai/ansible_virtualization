@@ -1,0 +1,9 @@
+mkdocs
+mkdocs-material
+mkdocs-pdf-export-plugin
+mkdocs-git-revision-date-plugin
+pymdown-extensions
+pygments
+markdown-include
+markdown-blockdiag
+flatten_json

@@ -1,0 +1,157 @@
+# Project Information
+site_name: Ansible Galaxy Collection - Virtualization
+site_url: https://github.com/crivetimihai/ansible_virtualization
+site_description: Ansible Collection of Virtualization Tools (VirtualBox, KVM, VMware Workstation, Docker, Podman) for RHEL, CentOS, Fedora and Ubuntu Linux
+site_author: Mihai Criveti
+copyright: Mihai Criveti
+
+# Repository Information
+repo_name: 'crivetimihai/ansible_virtualization'
+repo_url: 'https://github.com/crivetimihai/ansible_virtualization'
+edit_uri: 'edit/master/docs'
+docs_dir: 'docs'
+site_dir: 'site'
+remote_branch: 'gh-pages'
+remote_name: 'origin'
+
+# Server info
+dev_addr: '127.0.0.1:8001'
+#prebuild_index: true
+
+# Copyright
+copyright: Author and Contact - <a href="/about/">Mihai Criveti</a>.
+
+# Theme
+theme:
+    name: material
+    feature:
+        tabs: true
+        #    custom_dir: theme
+    palette:
+        primary: 'indigo'
+        accent: 'blue'
+    font:
+        text: 'IBM Plex Sans'
+        code: 'IBM Plex Mono'
+#    logo: 'ibm.svg'
+    logo:
+        icon: 'cloud'
+    favicon: 'theme/favicon.ico'
+
+# Extra stylesheet
+extra_css:
+  - 'extra-uml.css'
+  - 'pdf.css'
+  - 'mermaid.css'
+
+extra_javascript:
+  - 'extra-uml.js'
+  - 'raphael.min.js'
+  - 'underscore-min.js'
+  - 'sequence-diagram-min.js'
+  - 'flowchart.min.js'
+  - 'mermaid.min.js'
+
+# Plugins
+plugins:
+    - git-revision-date
+    - search
+    - pdf-export:
+        verbose: true
+        media_type: print
+        enabled_if_env: ENABLE_PDF_EXPORT
+        combined: false
+
+# Extra
+extra:
+  repo_icon: 'github'
+  social:
+    - type: 'github'
+      link: 'https://github.com/crivetimihai'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/in/crivetimihai/'
+    - type: 'twitter'
+      link: 'https://twitter.com/CrivetiMihai'
+    - type: 'globe'
+      link: 'http://blog.boreas.ro/'
+
+
+# Navigation
+nav:
+  - Ansible Collection:
+    - Introduction: index.md
+  - Virtualization:
+    - VirtualBox: virtualization/virtualbox.md
+    - KVM: virtualization/kvm.md
+    - VMware: virtualization/vmware.md
+    - Podman: virtualization/podman.md
+    - Docker: virtualization/docker-ce.md
+ 
+# Markdown extensions
+markdown_extensions:
+  - markdown_blockdiag:
+      format: svg
+  - markdown.extensions.toc:
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      permalink: "\ue157"
+  - markdown.extensions.admonition:
+  - markdown.extensions.smarty:
+      smart_quotes: false
+  - pymdownx.betterem:
+  - pymdownx.critic:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.def_list:
+  - markdown.extensions.tables:
+  - markdown.extensions.abbr:
+  - markdown.extensions.footnotes:
+  - pymdownx.extrarawhtml:
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        - name: flow
+          class: uml-flowchart
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: sequence
+          class: uml-sequence-diagram
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.highlight:
+      css_class: codehilite
+      extend_pygments_lang:
+        - name: php-inline
+          lang: php
+          options:
+            startinline: true
+        - name: pycon3
+          lang: pycon
+          options:
+            python3: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      repo_url_shorthand: true
+      social_url_shorthand: true
+      user: facelessuser
+      repo: pymdown-extensions
+  - pymdownx.tilde:
+  - pymdownx.caret:
+  - pymdownx.smartsymbols:
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.escapeall:
+      hardbreak: True
+      nbsp: True
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.progressbar:
+  - pymdownx.arithmatex:
+  - pymdownx.mark:
+  - pymdownx.striphtml:
+  - pymdownx.snippets:
+      base_path: docs/src/markdown/_snippets
+  - pymdownx.keys:
+      separator: "\uff0b"
+  - pymdownx.details:
