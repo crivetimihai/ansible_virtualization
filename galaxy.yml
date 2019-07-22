@@ -1,6 +1,6 @@
 namespace: "crivetimihai"
 name: "virtualization"
-version: "1.0.6"
+version: "1.0.7"
 readme: "README.md"
 authors:
   - "Mihai Criveti (https://twitter.com/crivetimihai)"
@@ -18,5 +18,5 @@ tags:
   - collection
 repository: "https://www.github.com/crivetimihai/ansible_virtualization"
 homepage: "https://www.github.com/crivetimihai/ansible_virtualization"
-documentation: "https://www.github.com/crivetimihai/ansible_virtualization"
+documentation: "https://crivetimihai.github.io/ansible_virtualization/"
 issues: "https://www.github.com/crivetimihai/ansible_virtualization/issues"
