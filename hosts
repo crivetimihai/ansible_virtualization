@@ -14,9 +14,6 @@ centos7 ansible_host=centos7
 [rhel]
 rhel8 ansible_host=rhel8
 
-[rhel:vars]
-ansible_python_interpreter=/usr/bin/python3
-
 [ubuntu]
 ubuntu1804 ansible_host=ubuntu1804
 
