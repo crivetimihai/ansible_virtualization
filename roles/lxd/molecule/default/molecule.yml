@@ -23,8 +23,7 @@ provisioner:
   lint:
     name: ansible-lint
 scenario:
-  scenario:
-  name: default  # optional
+  name: default
   create_sequence:
     - create
     - prepare
