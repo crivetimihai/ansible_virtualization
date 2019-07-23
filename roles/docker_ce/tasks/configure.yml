@@ -2,8 +2,8 @@
 # Configure docker groups
 - name: Create the docker group
   group:
-      name: docker
-      state: present
+    name: docker
+    state: present
 
 - name: Add users to the docker secondary group
   user:
@@ -18,7 +18,7 @@
 
 - name: Restart the docker service
   systemd:
-      name: docker
-      enabled: yes
-      state: restarted
+    name: docker
+    enabled: yes
+    state: restarted
   become: yes

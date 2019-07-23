@@ -16,9 +16,9 @@
     paths: /tmp/vbox-extpacks
   register: extpacks
 
-  #- debug:
-  #    var: item.path
-  #  with_items: "{{ extpacks.files }}"
+  # - debug:
+  #     var: item.path
+  #   with_items: "{{ extpacks.files }}"
 
 - name: check installed extpacks
   shell: |

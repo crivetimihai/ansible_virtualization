@@ -3,4 +3,3 @@
   dnf:
     name: "{{ rhel_podman_packages }}"
     state: present
-
