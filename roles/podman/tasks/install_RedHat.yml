@@ -1,5 +1,6 @@
 ---
 - name: Install podman and tools
   dnf:
-    name: "{{ podman_packages }}"
+    name: "{{ rhel_podman_packages }}"
     state: present
+

@@ -1,12 +1,6 @@
 ---
 # tasks file for podman
 
-- name: End the play for hosts that run RHEL 6 or older
-  meta: end_host
-  when:
-  - ansible_distribution == 'RedHat'
-  - ansible_distribution_version|int  <= 6
-
 - include: install_CentOS.yml
   when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_version']|int <= 7
 
@@ -17,6 +11,7 @@
   when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_version']|int == 30
 
 - include: install_Ubuntu.yml
-  when: ansible_facts['distribution'] == "Ubuntu"
+  when: ansible_facts['distribution'] == "Ubuntu" and ansible_facts['distribution_version'] == "18.04"
 
 - include: configure.yml
+  when: ansible_facts['distribution'] != 'Debian'

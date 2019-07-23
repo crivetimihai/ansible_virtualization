@@ -1,6 +1,22 @@
 ---
 # vars file for virtualbox
 
+# Packages to allow apt over https
+ubuntu_prereq_packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg-agent
+  - software-properties-common
+
+# Packages to allow apt over https
+debian_prereq_packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg-agent
+  - software-properties-common
+
 vboxdrv_required_packages_centos_7:
   - binutils
   - qt
@@ -13,7 +29,7 @@ vboxdrv_required_packages_centos_7:
   - kernel-headers
   - kernel-devel
   - "kernel-headers-{{ ansible_kernel }}"
-  - "kernel-devel-{{ ansible_kernel }}" 
+  - "kernel-devel-{{ ansible_kernel }}"
   - dkms
 
 vboxdrv_required_packages_rhel_8:
@@ -47,6 +63,11 @@ vboxdrv_required_packages_fedora_30:
   - dkms
 
 vboxdrv_required_packages_ubuntu_1804:
+  - build-essential
+  - gcc
+  - "linux-headers-{{ ansible_kernel }}"
+
+vboxdrv_required_packages_debian_10:
   - build-essential
   - gcc
   - "linux-headers-{{ ansible_kernel }}"

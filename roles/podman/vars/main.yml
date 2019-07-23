@@ -1,2 +1,15 @@
 ---
 # vars file for podman
+
+podman_packages:
+  - podman
+  - buildah
+  - skopeo
+
+rhel_podman_packages:
+  - '@container-tools:1.0/common'
+  - podman-docker
+
+ubuntu_prereq_packages:
+  - software-properties-common
+  - uidmap

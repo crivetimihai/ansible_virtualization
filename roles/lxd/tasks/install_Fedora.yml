@@ -18,7 +18,10 @@
   shell: |
       set -o pipefail
       semodule -l | grep '^snap$'
+  args:
+    executable: /bin/bash
   register: semodule_loaded
+  ignore_errors: yes
   changed_when: False
 
 - name: copy policy

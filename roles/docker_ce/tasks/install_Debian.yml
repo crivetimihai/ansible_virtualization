@@ -11,21 +11,21 @@
     url: "{{ item }}"
     state: present
   with_items:
-    - https://download.docker.com/linux/ubuntu/gpg
+    - https://download.docker.com/linux/debian/gpg
 
-- name: setup Docker apt repository on Ubuntu
+- name: setup Docker apt repository on Debian
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
     state: present
 
 - name: Install packages to allow apt to use a repository over HTTPS
   apt:
     update_cache: yes
-    name: "{{ ubuntu_prereq_packages }}"
+    name: "{{ debian_prereq_packages }}"
     state: present
 
 - name: Install Docker-CE
   apt:
     update_cache: yes
-    name: "{{ ubuntu_docker_packages }}"
+    name: "{{ debian_docker_packages }}"
     state: present

@@ -33,8 +33,6 @@ mazer install crivetimihai.virtualization
 ### playbook.yml example
 
 ```yaml
-# ansible-playbook -i localhost, playbook.yml -e "vmware_workstation_license_key='XXXXX-XX...'"
-
 - name: setup a virtualization environment
   hosts: all
   connection: local
@@ -47,5 +45,16 @@ mazer install crivetimihai.virtualization
     - role: crivetimihai.virtualization.virtualbox
     - role: crivetimihai.virtualization.podman
     - role: crivetimihai.virtualization.docker_ce
+```
+
+### Running the playbook
+
+> Change to the python interpreter location on the target system.
+
+
+```bash
+ansible-playbook -i localhost, playbook.yml \
+  -e "vmware_workstation_license_key='XXXXX-XX...'" \
+  -e "ansible_python_interpreter=/usr/bin/python3"
 ```
 

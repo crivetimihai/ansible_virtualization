@@ -16,15 +16,18 @@
     paths: /tmp/vbox-extpacks
   register: extpacks
 
-- debug:
-    var: item.path
-  with_items: "{{ extpacks.files }}"
+  #- debug:
+  #    var: item.path
+  #  with_items: "{{ extpacks.files }}"
 
 - name: check installed extpacks
   shell: |
       set -o pipefail
       vboxmanage list extpacks | grep Usable
+  args:
+    executable: /bin/bash
   register: extpack_installed
+  ignore_errors: yes
   changed_when: False
 
 - name: install extpacks

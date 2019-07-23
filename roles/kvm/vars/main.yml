@@ -55,5 +55,19 @@ kvm_required_packages_ubuntu_1804:
   - virt-top
   - genisoimage
 
+kvm_required_packages_debian_10:
+  - policycoreutils-python-utils
+  - qemu-kvm
+  - qemu-utils
+  - libvirt-clients
+  - libvirt-daemon-system
+  - bridge-utils
+  - python3-libvirt
+  - libnss-libvirt
+  - libguestfs-tools
+  - virtinst
+  - virt-top
+  - genisoimage
+
 selinux_booleans:
   - {name: staff_use_svirt, state: yes, persistent: yes}

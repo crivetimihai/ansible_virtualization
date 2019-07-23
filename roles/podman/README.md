@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Install Podman, Buildah and Skopeo on RHEL 8 and Fedora.
+Install Podman, Buildah and Skopeo.
 
 Requirements
 ------------

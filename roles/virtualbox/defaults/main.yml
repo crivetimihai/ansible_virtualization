@@ -15,5 +15,5 @@ virtualbox_version: "6.0"
 install_extpacks: yes
 
 # List of VirtualBox extensions to install
-virtualbox_extpack_urls: 
+virtualbox_extpack_urls:
   - "https://download.virtualbox.org/virtualbox/6.0.10/Oracle_VM_VirtualBox_Extension_Pack-6.0.10.vbox-extpack"

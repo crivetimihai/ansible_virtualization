@@ -1,0 +1,33 @@
+---
+# Install VirtualBox on Debian
+
+- name: Install packages to allow apt to use a repository over HTTPS
+  apt:
+    update_cache: yes
+    name: "{{ debian_prereq_packages }}"
+    state: present
+
+- name: add Virtualbox apt signing key
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items:
+    - https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    - https://www.virtualbox.org/download/oracle_vbox.asc
+
+- name: setup VirtualBox apt repository on Debian
+  apt_repository:
+    repo: "deb https://download.virtualbox.org/virtualbox/debian buster contrib"
+    state: present
+
+- name: install VirtualBox
+  apt:
+    update_cache: yes
+    name: "virtualbox-{{ virtualbox_version }}"
+    state: present
+
+- name: install VirtualBox vboxdrv requirements on Debian
+  apt:
+    name: "{{ vboxdrv_required_packages_debian_10 }}"
+    state: present
+  when: ansible_facts['distribution'] == "Debian"
