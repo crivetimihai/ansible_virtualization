@@ -18,7 +18,6 @@
 
 - name: install VMware Workstation
   command: /tmp/vmware-workstation.bundle --console --eulas-agreed --required
-  become: true
   args:
     creates: /usr/bin/vmware
   become: yes

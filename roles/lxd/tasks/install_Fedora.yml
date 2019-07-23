@@ -14,7 +14,7 @@
     dest: /snap
     owner: root
     group: root
-  become:yes
+  become: yes
 
 - name: check if module was loaded
   shell: |
@@ -25,7 +25,7 @@
   register: semodule_loaded
   ignore_errors: yes
   changed_when: False
-  become:yes
+  become: yes
 
 - name: copy policy
   copy:
