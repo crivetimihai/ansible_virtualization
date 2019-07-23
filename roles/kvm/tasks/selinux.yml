@@ -9,3 +9,4 @@
     persistent: "{{ item.persistent | default('no') }}"
   with_items: "{{ selinux_booleans }}"
   become: yes
+  when: ansible_selinux.status == "enabled"
