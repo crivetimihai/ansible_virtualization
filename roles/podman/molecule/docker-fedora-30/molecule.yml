@@ -10,9 +10,12 @@ lint:
 platforms:
   - name: fedora-30
     image: fedora:30
-    pre_build_image: yes
+    dockerfile: Dockerfile.j2
+    pre_build_image: False
 provisioner:
   name: ansible
+  extra_vars:
+    ansible_python_interpreter: /usr/bin/python3
   lint:
     name: ansible-lint
 scenario:

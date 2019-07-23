@@ -10,7 +10,8 @@ lint:
 platforms:
   - name: debian-10
     image: debian:10
-    pre_build_image: yes
+    dockerfile: Dockerfile.j2
+    pre_build_image: False
 provisioner:
   name: ansible
   lint:

@@ -23,3 +23,4 @@
     enabled: yes
     state: started
   become: yes
+  tags: molecule-notest

@@ -9,8 +9,11 @@ lint:
   name: yamllint
 platforms:
   - name: rhel-8
-    image: rhel:8
-    pre_build_image: yes
+    image: ubi
+    dockerfile: Dockerfile.j2
+    pre_build_image: False
+    registry:
+      url: registry.access.redhat.com/ubi8
 provisioner:
   name: ansible
   lint:

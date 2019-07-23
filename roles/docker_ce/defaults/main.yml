@@ -2,7 +2,8 @@
 # defaults file for docker_ce
 
 docker_users:
-  - "{{ ansible_user }}"
+  - root
+  #  - "{{ ansible_user }}"
 
 # Use podman and buildah instead, or look at Docker-EE
 force_docker_ce_on_rhel_8: false

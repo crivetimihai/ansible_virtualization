@@ -2,22 +2,16 @@
 dependency:
   name: galaxy
 driver:
-  name: vagrant
+  name: docker
   provider:
-    name: virtualbox
+    name: docker
 lint:
   name: yamllint
 platforms:
-  - name: ubuntu-1804
-    box: ubuntu/bionic64
-  - name: debian-10
-    box: debian/buster64
   - name: centos-7
-    box: centos/7
-  - name: fedora-30
-    box: fedora/30-cloud-base
-  - name: rhel-8
-    box: generic/rhel8
+    image: centos:7
+    dockerfile: Dockerfile.j2
+    pre_build_image: False
 provisioner:
   name: ansible
   lint:
