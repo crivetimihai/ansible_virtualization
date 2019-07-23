@@ -9,7 +9,7 @@ lint:
   name: yamllint
 platforms:
   - name: ubuntu-1804
-    image: ubuntu:1804
+    image: ubuntu:18.04
     pre_build_image: yes
 provisioner:
   name: ansible
