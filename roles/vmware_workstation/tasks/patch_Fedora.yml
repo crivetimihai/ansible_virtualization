@@ -1,7 +1,7 @@
 ---
 # Apply VMware host modules patch for newer kernels https://github.com/mkubecek/vmware-host-modules
 
-# TODO: check kernel version
+# Avoid unarchive from url, as it doesn't support checksum
 - name: Download VMware Host Modules patch for Fedora 30 Kernel 5.1
   get_url:
     url: "{{ fedora_30_vmware_patch_url }}"
@@ -9,6 +9,12 @@
     dest: /tmp/vmware-patch.tar.gz
     mode: "0777"
   when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_major_version']|int == 30
+
+- name: extract /tmp/vmware-patch.tar.gz
+  unarchive:
+    remote_src: yes
+    src: /tmp/vmware-patch.tar.gz
+    dest: /tmp
 
 - name: Create VMware host module archives
   archive:
