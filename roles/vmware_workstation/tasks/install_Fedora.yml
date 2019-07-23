@@ -2,7 +2,8 @@
 # Install prereqs on Fedora
 
 - name: install requirements on Fedora 30
-  dnf:
+  yum:
     name: "{{ vmware_required_packages_fedora_30 }}"
     state: present
   when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_major_version']|int >= 30
+  become: yes

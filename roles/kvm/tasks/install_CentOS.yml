@@ -9,3 +9,4 @@
     name: "{{ kvm_required_packages_centos_7 }}"
     state: present
   when: ansible_facts['distribution'] == "CentOS"
+  become: yes

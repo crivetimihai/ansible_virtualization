@@ -6,3 +6,4 @@
     name: "{{ vmware_required_packages_centos_7 }}"
     state: present
   when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version']|int == 7
+  become: yes

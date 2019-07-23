@@ -7,3 +7,4 @@
     name: "{{ vmware_required_packages_debian_10 }}"
     state: present
   when: ansible_facts['distribution'] == "Debian"
+  become: yes

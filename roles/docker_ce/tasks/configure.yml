@@ -4,6 +4,7 @@
   group:
     name: docker
     state: present
+  become: yes
 
 - name: Add users to the docker secondary group
   user:
@@ -16,9 +17,9 @@
 - name: Reset ssh connection to allow user changes to affect current user
   meta: reset_connection
 
-- name: Restart the docker service
+- name: Start the docker service
   systemd:
     name: docker
     enabled: yes
-    state: restarted
+    state: started
   become: yes

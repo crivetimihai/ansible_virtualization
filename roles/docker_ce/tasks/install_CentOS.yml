@@ -8,6 +8,7 @@
         docker-common, docker-engine, docker-latest,
         docker-latest, docker-latest-logrotate, docker-logrotate,
     state: absent
+  become: yes
 
 - name: Setup yum repository
   get_url:
@@ -15,8 +16,10 @@
     checksum: "sha256:6650718e0fe5202ae7618521f695d43a8bc051c539d7570f0edbfa5b4916f218"
     dest: /etc/yum.repos.d/docker-ce.repo
     mode: '0644'
+  become: yes
 
 - name: Install Docker-CE
   yum:
     name: docker-ce, docker-ce-cli, containerd.io
     state: present
+  become: yes

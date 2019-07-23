@@ -5,11 +5,13 @@
   yum:
     name: epel-release
     state: present
+  become: yes
 
 - name: install snapd
   yum:
     name: snapd
     state: present
+  become: yes
 
 - name: create /snap symlink
   file:
@@ -18,3 +20,4 @@
     dest: /snap
     owner: root
     group: root
+  become: yes

@@ -12,3 +12,4 @@
   snap:
     name:
       - lxd
+  become: yes

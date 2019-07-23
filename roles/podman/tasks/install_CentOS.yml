@@ -3,3 +3,4 @@
   yum:
     name: "{{ podman_packages }}"
     state: present
+  become: yes

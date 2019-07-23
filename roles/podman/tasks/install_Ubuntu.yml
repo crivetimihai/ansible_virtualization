@@ -3,13 +3,16 @@
   apt:
     update_cache: yes
     name: "{{ ubuntu_prereq_packages }}"
+  become: yes
 
 - name: add podman ppa
   apt_repository:
     repo: ppa:projectatomic/ppa
+  become: yes
 
 - name: Install podman and tools
   apt:
     update_cache: yes
     name: "{{ podman_packages }}"
     state: present
+  become: yes

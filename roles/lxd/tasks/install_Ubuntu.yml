@@ -6,3 +6,4 @@
     update_cache: yes
     name: snapd
     state: present
+  become: yes

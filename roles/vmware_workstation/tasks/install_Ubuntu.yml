@@ -7,3 +7,4 @@
     name: "{{ vmware_required_packages_ubuntu_1804 }}"
     state: present
   when: ansible_facts['distribution'] == "Ubuntu"
+  become: yes

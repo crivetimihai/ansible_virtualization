@@ -62,5 +62,10 @@ ansible-playbook -i localhost, playbook.yml \
 
 ```
 molecule --debug create
-molecule --debug test
+molecule --debug converge
+molecule login
+molecule destroy
+
+# Test one scenario:
+molecule converge -s rhel-8
 ```

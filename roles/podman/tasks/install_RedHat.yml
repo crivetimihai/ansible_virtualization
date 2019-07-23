@@ -1,5 +1,6 @@
 ---
 - name: Install podman and tools
-  dnf:
+  yum:
     name: "{{ rhel_podman_packages }}"
     state: present
+  become: yes

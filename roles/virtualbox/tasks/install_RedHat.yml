@@ -11,6 +11,7 @@
     repo_gpgcheck: 1
     gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
   when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int <= 7
+  become: yes
 
 # Temporary fix, for RHEL 8 (currently, distribution is not available)
 - name: setup VirtualBox yum repository on RHEL 8 (using Fedora 29 repo)
@@ -23,14 +24,17 @@
     repo_gpgcheck: 1
     gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
   when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int == 8
+  become: yes
 
 - name: install VirtualBox
   yum:
     name: "VirtualBox-{{ virtualbox_version }}.{{ ansible_architecture }}"
     state: present
+  become: yes
 
 - name: install VirtualBox vboxdrv requirements on RHEL
   yum:
     name: "{{ vboxdrv_required_packages_rhel_8 }}"
     state: present
   when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int == 7
+  become: yes

@@ -6,6 +6,7 @@
     update_cache: yes
     name: "{{ debian_prereq_packages }}"
     state: present
+  become: yes
 
 - name: add Virtualbox apt signing key
   apt_key:
@@ -14,20 +15,24 @@
   with_items:
     - https://www.virtualbox.org/download/oracle_vbox_2016.asc
     - https://www.virtualbox.org/download/oracle_vbox.asc
+  become: yes
 
 - name: setup VirtualBox apt repository on Debian
   apt_repository:
     repo: "deb https://download.virtualbox.org/virtualbox/debian buster contrib"
     state: present
+  become: yes
 
 - name: install VirtualBox
   apt:
     update_cache: yes
     name: "virtualbox-{{ virtualbox_version }}"
     state: present
+  become: yes
 
 - name: install VirtualBox vboxdrv requirements on Debian
   apt:
     name: "{{ vboxdrv_required_packages_debian_10 }}"
     state: present
   when: ansible_facts['distribution'] == "Debian"
+  become: yes

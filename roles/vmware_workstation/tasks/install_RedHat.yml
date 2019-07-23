@@ -2,7 +2,8 @@
 # Install prereqs on RHEL 8
 
 - name: install requirements on RHEL 8
-  dnf:
+  yum:
     name: "{{ vmware_required_packages_rhel_8 }}"
     state: present
   when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int >= 8
+  become: yes

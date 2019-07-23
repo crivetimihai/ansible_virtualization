@@ -7,8 +7,8 @@
 
 - name: rebuild kernel modules
   command: /usr/lib/virtualbox/vboxdrv.sh setup
-  become: True
   when: "'is loaded' not in vboxdrv_status.stdout"
+  become: yes
 
 - name: setup VirtualBox user
   user:
@@ -17,3 +17,4 @@
       append: yes
   with_items: "{{ vbox_users }}"
   when: setup_users
+  become: yes

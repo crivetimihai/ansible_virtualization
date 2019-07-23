@@ -8,3 +8,4 @@
     state: "{{ item.state }}"
     persistent: "{{ item.persistent | default('no') }}"
   with_items: "{{ selinux_booleans }}"
+  become: yes

@@ -11,19 +11,23 @@
     repo_gpgcheck: 1
     gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
   when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version']|int == 7
+  become: yes
 
 - name: enable epel repository
   yum:
     name: epel-release
     state: present
+  become: yes
 
 - name: install VirtualBox
   yum:
     name: "VirtualBox-{{ virtualbox_version }}.{{ ansible_architecture }}"
     state: present
+  become: yes
 
 - name: install VirtualBox vboxdrv requirements on CentOS 7
   yum:
     name: "{{ vboxdrv_required_packages_centos_7 }}"
     state: present
   when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version']|int == 7
+  become: yes

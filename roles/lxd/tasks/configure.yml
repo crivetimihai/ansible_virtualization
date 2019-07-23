@@ -6,8 +6,8 @@
     name: "{{ item }}"
     append: yes
     groups: lxd
-  become: yes
   with_items: "{{ lxd_users }}"
+  become: yes
 
 - name: Reset ssh connection to allow user changes to affect current user
   meta: reset_connection

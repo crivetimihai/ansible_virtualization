@@ -2,7 +2,8 @@
 # Install KVM on RHEL
 
 - name: install KVM packages on RedHat 8
-  dnf:
+  yum:
     name: "{{ kvm_required_packages_rhel_8 }}"
     state: present
   when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_version']|int >=8
+  become: yes

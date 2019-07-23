@@ -5,6 +5,7 @@
         docker, docker-engine, docker.io,
         containerd, runc
     state: absent
+  become: yes
 
 - name: add Docker apt signing key
   apt_key:
@@ -12,20 +13,24 @@
     state: present
   with_items:
     - https://download.docker.com/linux/ubuntu/gpg
+  become: yes
 
 - name: setup Docker apt repository on Ubuntu
   apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
     state: present
+  become: yes
 
 - name: Install packages to allow apt to use a repository over HTTPS
   apt:
     update_cache: yes
     name: "{{ ubuntu_prereq_packages }}"
     state: present
+  become: yes
 
 - name: Install Docker-CE
   apt:
     update_cache: yes
     name: "{{ ubuntu_docker_packages }}"
     state: present
+  become: yes

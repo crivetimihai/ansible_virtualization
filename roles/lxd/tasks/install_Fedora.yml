@@ -2,9 +2,10 @@
 # Install snap on Fedora
 
 - name: install snapd
-  dnf:
+  yum:
     name: snapd
     state: present
+  become: yes
 
 - name: create /snap symlink
   file:
@@ -13,6 +14,7 @@
     dest: /snap
     owner: root
     group: root
+  become:yes
 
 - name: check if module was loaded
   shell: |
@@ -23,6 +25,7 @@
   register: semodule_loaded
   ignore_errors: yes
   changed_when: False
+  become:yes
 
 - name: copy policy
   copy:
@@ -32,5 +35,5 @@
 
 - name: setup snap selinux policy
   command: semodule -i /tmp/snap.pp
-  become: yes
   when: "'snap' not in semodule_loaded.stdout"
+  become: yes

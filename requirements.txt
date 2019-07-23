@@ -6,3 +6,4 @@ molecule
 molecule[docker] # requires libyaml-devel
 setuptools
 selinux
+python-vagrant

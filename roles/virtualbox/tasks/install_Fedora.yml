@@ -11,14 +11,17 @@
     repo_gpgcheck: 1
     gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
   when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_major_version']|int >= 30
+  become: yes
 
 - name: install VirtualBox
   yum:
     name: "VirtualBox-{{ virtualbox_version }}.{{ ansible_architecture }}"
     state: present
+  become: yes
 
 - name: install VirtualBox vboxdrv requirements on Fedora
   yum:
     name: "{{ vboxdrv_required_packages_fedora_30 }}"
     state: present
   when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_major_version']|int >= 30
+  become: yes

@@ -14,12 +14,14 @@
     path: /etc/init.d
     state: directory
     mode: '0755'
+  become: yes
 
 - name: install VMware Workstation
   command: /tmp/vmware-workstation.bundle --console --eulas-agreed --required
   become: true
   args:
     creates: /usr/bin/vmware
+  become: yes
 
 - name: delete temporary download files
   file:
