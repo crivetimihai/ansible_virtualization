@@ -58,3 +58,9 @@ ansible-playbook -i localhost, playbook.yml \
   -e "ansible_python_interpreter=/usr/bin/python3"
 ```
 
+### Running tests
+
+```
+molecule --debug create
+molecule --debug test
+```

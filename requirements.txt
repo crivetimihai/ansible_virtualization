@@ -3,3 +3,6 @@ ansible-lint
 yamllint
 mazer
 molecule
+molecule[docker] # requires libyaml-devel
+setuptools
+selinux
