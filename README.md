@@ -68,4 +68,7 @@ molecule destroy
 
 # Test one scenario:
 molecule converge -s rhel-8
+
+# Create a new role
+molecule init role -r new_role -d docker
 ```

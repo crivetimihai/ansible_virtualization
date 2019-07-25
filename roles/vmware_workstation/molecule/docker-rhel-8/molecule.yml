@@ -8,7 +8,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: rhel-8
+  - name: vmware_workstation-rhel-8
     image: ubi
     dockerfile: Dockerfile.j2
     pre_build_image: False
@@ -53,6 +53,6 @@ scenario:
     - cleanup
     - destroy
 verifier:
-  name: testinfra
+  name: goss
   lint:
-    name: flake8
+    name: yamllint

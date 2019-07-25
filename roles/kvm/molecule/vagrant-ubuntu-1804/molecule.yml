@@ -8,7 +8,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: ubuntu-1804
+  - name: kvm-ubuntu-1804
     box: ubuntu/bionic64
 provisioner:
   name: ansible
@@ -49,6 +49,6 @@ scenario:
     - cleanup
     - destroy
 verifier:
-  name: testinfra
+  name: goss
   lint:
-    name: flake8
+    name: yamllint

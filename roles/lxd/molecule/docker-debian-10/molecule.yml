@@ -8,8 +8,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: debian-10
-    image: debian:10
+  - name: lxd-debian-10
+    image: debian:7
     dockerfile: Dockerfile.j2
     pre_build_image: False
 provisioner:
@@ -17,7 +17,7 @@ provisioner:
   lint:
     name: ansible-lint
 scenario:
-  name: docker-debian-10
+  name: default
   create_sequence:
     - create
     - prepare
@@ -51,6 +51,6 @@ scenario:
     - cleanup
     - destroy
 verifier:
-  name: testinfra
+  name: goss
   lint:
-    name: flake8
+    name: yamllint

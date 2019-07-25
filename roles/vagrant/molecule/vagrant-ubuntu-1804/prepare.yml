@@ -1,0 +1,9 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Install python for Ansible
+      raw: apt-get update && apt-get install -y python sudo bash ca-certificates && apt-get clean
+      changed_when: false
+  become: yes

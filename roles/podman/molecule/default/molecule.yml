@@ -8,7 +8,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: centos-7
+  - name: podman-centos-7
     image: centos:7
     dockerfile: Dockerfile.j2
     pre_build_image: False
@@ -51,6 +51,6 @@ scenario:
     - cleanup
     - destroy
 verifier:
-  name: testinfra
+  name: goss
   lint:
-    name: flake8
+    name: yamllint
