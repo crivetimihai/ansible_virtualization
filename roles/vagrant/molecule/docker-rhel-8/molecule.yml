@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vagrant_rhel8
+  - name: vagrant-rhel-8
     image: ubi
     registry:
       url: registry.access.redhat.com/ubi8

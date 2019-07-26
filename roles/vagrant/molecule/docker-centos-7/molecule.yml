@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vagrant_centos7
+  - name: vagrant-centos-7
     image: centos:7
     dockerfile: ../resources/Dockerfile.j2
     pre_build_image: False

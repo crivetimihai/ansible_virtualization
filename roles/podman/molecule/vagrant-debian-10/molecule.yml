@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: podman_debian10
+  - name: podman-debian-10
     box: debian/buster64
 provisioner:
   name: ansible

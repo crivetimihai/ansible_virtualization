@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: packer_fedora30
+  - name: packer-fedora-30
     image: fedora:30
     dockerfile: ../resources/Dockerfile.j2
     pre_build_image: False

@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: lxd_rhel7
+  - name: lxd-rhel-7
     image: ubi
     registry:
       url: registry.access.redhat.com/ubi7

@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: virtualbox_rhel7
+  - name: virtualbox-rhel-7
     image: ubi
     registry:
       url: registry.access.redhat.com/ubi7

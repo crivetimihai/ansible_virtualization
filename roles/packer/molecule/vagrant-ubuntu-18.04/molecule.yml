@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: packer_ubuntu1804
+  - name: packer-ubuntu-1804
     box: ubuntu/bionic64
 provisioner:
   name: ansible

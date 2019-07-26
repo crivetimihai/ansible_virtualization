@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: virtualbox_centos7.6
+  - name: virtualbox-centos-76
     image: centos:7.6.1810
     dockerfile: ../resources/Dockerfile.j2
     privileged: True

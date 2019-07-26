@@ -8,7 +8,7 @@
   roles:
     - role: lxd
     - role: podman
-    - role: vmware_workstation
+    - role: vmware
     - role: kvm
     - role: virtualbox
-    - role: docker_ce
+    - role: docker

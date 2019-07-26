@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: lxd_debian10
+  - name: lxd-debian-10
     box: debian/buster64
 provisioner:
   name: ansible

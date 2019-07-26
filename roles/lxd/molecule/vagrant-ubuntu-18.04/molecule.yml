@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: lxd_ubuntu1804
+  - name: lxd-ubuntu-1804
     box: ubuntu/bionic64
 provisioner:
   name: ansible

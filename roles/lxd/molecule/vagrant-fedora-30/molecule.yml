@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: lxd_fedora30
+  - name: lxd-fedora-30
     box: fedora/30
 provisioner:
   name: ansible

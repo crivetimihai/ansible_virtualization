@@ -1,0 +1,9 @@
+---
+# defaults file for docker
+
+docker_users:
+  - root
+  #  - "{{ ansible_user }}"
+
+# Use podman and buildah instead, or look at Docker-EE
+force_docker_on_rhel_8: false

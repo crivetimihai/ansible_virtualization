@@ -12,4 +12,4 @@
     - role: crivetimihai.virtualization.vmware_workstation
     - role: crivetimihai.virtualization.virtualbox
     - role: crivetimihai.virtualization.podman
-    - role: crivetimihai.virtualization.docker_ce
+    - role: crivetimihai.virtualization.docker

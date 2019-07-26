@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: kvm_debian10
+  - name: kvm-debian-10
     box: debian/buster64
 provisioner:
   name: ansible

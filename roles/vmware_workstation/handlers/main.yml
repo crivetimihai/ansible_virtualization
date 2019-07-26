@@ -1,7 +1,0 @@
----
-# handlers file for vmware_workstation
-
-- name: reload systemd
-  systemd:
-    daemon_reload: yes
-  when: ansible_service_mgr == "systemd"

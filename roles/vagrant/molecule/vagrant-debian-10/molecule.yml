@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vagrant_debian10
+  - name: vagrant-debian-10
     box: debian/buster64
 provisioner:
   name: ansible

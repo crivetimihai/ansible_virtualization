@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: virtualbox_debian10
+  - name: virtualbox-debian-10
     box: debian/buster64
 provisioner:
   name: ansible

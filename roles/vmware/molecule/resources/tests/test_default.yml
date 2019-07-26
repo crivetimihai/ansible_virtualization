@@ -1,0 +1,17 @@
+# Molecule managed
+---
+file:
+  /usr/bin/vmware:
+    exists: true
+    owner: root
+    group: root
+
+command:
+  help:
+    exit-status: 0
+    exec: "vmware --help"
+    stdout:
+      - "/vmware/"
+    stderr: []
+    timeout: 10000      # in milliseconds
+    skip: false

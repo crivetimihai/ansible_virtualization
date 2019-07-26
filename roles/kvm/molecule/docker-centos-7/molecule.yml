@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: kvm_centos7
+  - name: kvm-centos-7
     image: centos:7
     dockerfile: ../resources/Dockerfile.j2
     pre_build_image: False

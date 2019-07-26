@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: kvm_fedora30
+  - name: kvm-fedora-30
     box: fedora/30
 provisioner:
   name: ansible

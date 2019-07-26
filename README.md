@@ -43,10 +43,10 @@ mazer install crivetimihai.virtualization
   roles:
     - role: crivetimihai.virtualization.kvm
     - role: crivetimihai.virtualization.lxd
-    - role: crivetimihai.virtualization.vmware_workstation
+    - role: crivetimihai.virtualization.vmware
     - role: crivetimihai.virtualization.virtualbox
     - role: crivetimihai.virtualization.podman
-    - role: crivetimihai.virtualization.docker_ce
+    - role: crivetimihai.virtualization.docker
 ```
 
 ### Running the playbook
