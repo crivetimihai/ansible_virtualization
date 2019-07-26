@@ -1,0 +1,9 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: no
+  become: no
+
+  tasks:
+    - name: bootstrap python
+      script: bootstrap.sh

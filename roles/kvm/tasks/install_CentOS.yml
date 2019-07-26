@@ -1,12 +1,8 @@
 ---
-# Install KVM on CentOS
+# Install kvm on CentOS
 
-# - debug:
-#    var: kvm_required_packages_centos
-
-- name: install KVM packages on CentOS
-  yum:
-    name: "{{ kvm_required_packages_centos_7 }}"
+- name: Install CentOS packages
+  package:
+    name: "{{ centos_packages }}"
     state: present
-  when: ansible_facts['distribution'] == "CentOS"
   become: yes

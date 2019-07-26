@@ -1,0 +1,15 @@
+---
+sudo: required
+language: python
+services: docker
+
+cache:
+  - pip
+
+install:
+  - pip install --upgrade pip
+  - pip install ansible ansbile-lint yamllint mazer molecule docker
+
+script:
+  - ansible-lint roles/*
+  - yamllint roles/*

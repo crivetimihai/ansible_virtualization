@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Mihai Criveti
-  description: VMware Workstation
+  description: Vmware_workstation
   company: Mihai Criveti
   license: MIT
   min_ansible_version: 2.4
@@ -26,8 +26,6 @@ galaxy_info:
         - buster
 
   galaxy_tags:
-    - vmware
-    - virtualization
     - debian
     - ubuntu
     - rhel

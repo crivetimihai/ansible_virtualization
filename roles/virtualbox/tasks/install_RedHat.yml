@@ -27,14 +27,14 @@
   become: yes
 
 - name: install VirtualBox
-  yum:
+  package:
     name: "VirtualBox-{{ virtualbox_version }}.{{ ansible_architecture }}"
     state: present
   become: yes
 
 - name: install VirtualBox vboxdrv requirements on RHEL
-  yum:
+  package:
     name: "{{ vboxdrv_required_packages_rhel_8 }}"
     state: present
-  when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int == 7
+  when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_major_version']|int == 8
   become: yes

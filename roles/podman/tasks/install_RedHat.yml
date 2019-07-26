@@ -1,6 +1,8 @@
 ---
-- name: Install podman and tools
-  yum:
-    name: "{{ rhel_podman_packages }}"
+# Install podman on RedHat
+
+- name: install RedHat packages
+  package:
+    name: "{{ redhat_packages }}"
     state: present
   become: yes

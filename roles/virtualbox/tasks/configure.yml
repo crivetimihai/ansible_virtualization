@@ -1,4 +1,5 @@
 ---
+# configure task for virtualbox
 
 - name: check kernel module status
   command: /usr/lib/virtualbox/vboxdrv.sh status

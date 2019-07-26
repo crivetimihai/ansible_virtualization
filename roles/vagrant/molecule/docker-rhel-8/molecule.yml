@@ -1,6 +1,7 @@
 ---
 dependency:
   name: galaxy
+  role-file: requirements.yml
 driver:
   name: docker
   provider:
@@ -10,49 +11,30 @@ lint:
 platforms:
   - name: vagrant-rhel-8
     image: ubi
-    dockerfile: Dockerfile.j2
-    pre_build_image: False
     registry:
       url: registry.access.redhat.com/ubi8
+    dockerfile: ../resources/Dockerfile.j2
+    pre_build_image: False
+    privileged: True
+    volume_mounts:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
+    command: "/usr/sbin/init"
+    environment:
+      container: docker
 provisioner:
   name: ansible
+  extra_vars:
+    ansible_python_interpreter: /usr/bin/python3
+  log: True
+  playbooks:
+    vagrant:
+      prepare: ../resources/playbooks/prepare.yml
+    converge: ../resources/playbooks/playbook.yml
+    verify: ../resources/playbooks/verify.yml
   lint:
     name: ansible-lint
-scenario:
-  name: docker-rhel-8
-  create_sequence:
-    - create
-    - prepare
-  check_sequence:
-    - destroy
-    - dependency
-    - create
-    - prepare
-    - converge
-    - check
-    - destroy
-  converge_sequence:
-    - dependency
-    - create
-    - prepare
-    - converge
-  destroy_sequence:
-    - cleanup
-    - destroy
-  test_sequence:
-    - lint
-    - destroy
-    - dependency
-    - syntax
-    - create
-    - prepare
-    - converge
-    - idempotence
-    - side_effect
-    - verify
-    - cleanup
-    - destroy
 verifier:
   name: goss
+  directory: ../resources/tests
   lint:
     name: yamllint

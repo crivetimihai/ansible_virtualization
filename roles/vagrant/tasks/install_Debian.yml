@@ -1,0 +1,8 @@
+---
+# Install vagrant on Debian
+
+- name: install Debian packages
+  package:
+    name: "{{ debian_packages }}"
+    state: absent
+  become: yes

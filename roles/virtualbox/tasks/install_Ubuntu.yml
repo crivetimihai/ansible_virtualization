@@ -2,8 +2,7 @@
 # Install VirtualBox on Ubuntu
 
 - name: Install packages to allow apt to use a repository over HTTPS
-  apt:
-    update_cache: yes
+  package:
     name: "{{ ubuntu_prereq_packages }}"
     state: present
   become: yes
@@ -24,15 +23,13 @@
   become: yes
 
 - name: install VirtualBox
-  apt:
-    update_cache: yes
+  package:
     name: "virtualbox-{{ virtualbox_version }}"
     state: present
   become: yes
 
 - name: install VirtualBox vboxdrv requirements on Ubuntu
-  apt:
+  package:
     name: "{{ vboxdrv_required_packages_ubuntu_1804 }}"
     state: present
-  when: ansible_facts['distribution'] == "Ubuntu"
   become: yes

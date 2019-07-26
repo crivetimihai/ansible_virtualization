@@ -1,32 +1,28 @@
 Role Name
 =========
 
-Installs LXD using snapd. See: https://linuxcontainers.org/lxd/getting-started-cli/
-Not supported on RHEL 8+.
+lxd
 
 Requirements
 ------------
 
-Will install snapd.
+- For RHEL, a Red Hat subscription or functional local repository.
 
 Role Variables
 --------------
 
-- `lxd_users` - list of users to add to `lxd` group.
 
 Dependencies
 ------------
 
-- n/a
+- For Red Hat, subscription-manager.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: crivetmihai.lxd, lxd_users: vagrant }
+         - role: lxd
 
 License
 -------
@@ -36,4 +32,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/crivetimihai/) 
+- [Mihai Criveti](https://www.linkedin.com/in/crivetimihai/)

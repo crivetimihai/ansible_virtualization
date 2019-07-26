@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Mihai Criveti
-  description: LXC/LXD
+  description: Lxd
   company: Mihai Criveti
   license: MIT
   min_ansible_version: 2.4
@@ -17,6 +17,7 @@ galaxy_info:
     - name: EL
       versions:
         - 7
+        - 8
     - name: Ubuntu
       versions:
         - bionic
@@ -25,11 +26,9 @@ galaxy_info:
         - buster
 
   galaxy_tags:
-    - lxd
-    - lxc
-    - virtualization
     - debian
     - ubuntu
+    - rhel
     - centos
     - fedora
 

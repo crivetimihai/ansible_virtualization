@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Install VMware Workstation.
+vmware_workstation
 
 Requirements
 ------------
@@ -11,9 +11,6 @@ Requirements
 Role Variables
 --------------
 
-- `vmware_required_packages_centos_7`
-- `vmware_required_packages_rhel_8`
-- `vmware_required_packages_fedora_30`
 
 Dependencies
 ------------

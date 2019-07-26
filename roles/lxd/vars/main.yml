@@ -1,2 +1,17 @@
 ---
 # vars file for lxd
+
+centos_packages:
+  - lxd
+
+redhat_packages:
+  - lxd
+
+fedora_packages:
+  - lxd
+
+debian_packages:
+  - lxd
+
+ubuntu_packages:
+  - lxd

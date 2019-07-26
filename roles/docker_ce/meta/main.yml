@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Mihai Criveti
-  description: Docker-CE
+  description: Docker_ce
   company: Mihai Criveti
   license: MIT
   min_ansible_version: 2.4
@@ -26,8 +26,6 @@ galaxy_info:
         - buster
 
   galaxy_tags:
-    - docker
-    - virtualization
     - debian
     - ubuntu
     - rhel

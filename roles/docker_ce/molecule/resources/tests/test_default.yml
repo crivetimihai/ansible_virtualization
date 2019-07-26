@@ -1,0 +1,17 @@
+# Molecule managed
+---
+file:
+  /usr/bin/docker_ce:
+    exists: true
+    owner: root
+    group: root
+
+command:
+  help:
+    exit-status: 0
+    exec: "docker_ce --help"
+    stdout:
+      - "/docker_ce/"
+    stderr: []
+    timeout: 10000      # in milliseconds
+    skip: false

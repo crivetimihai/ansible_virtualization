@@ -1,6 +1,8 @@
 ---
-- name: install KVM packages on Debian 10
-  apt:
-    update_cache: yes
-    name: "{{ kvm_required_packages_debian_10 }}"
+# Install kvm on Debian
+
+- name: install Debian packages
+  package:
+    name: "{{ debian_packages }}"
+    state: absent
   become: yes

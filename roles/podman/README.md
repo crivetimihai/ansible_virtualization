@@ -1,29 +1,28 @@
 Role Name
 =========
 
-Install Podman, Buildah and Skopeo.
+podman
 
 Requirements
 ------------
 
-Functional package management system.
+- For RHEL, a Red Hat subscription or functional local repository.
 
 Role Variables
 --------------
 
-- n/a
 
 Dependencies
 ------------
 
-- n/a
+- For Red Hat, subscription-manager.
 
 Example Playbook
 ----------------
 
     - hosts: servers
       roles:
-         - { role: crivetimihai.virtualization.podman }
+         - role: podman
 
 License
 -------
@@ -33,4 +32,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/crivetimihai/)  
+- [Mihai Criveti](https://www.linkedin.com/in/crivetimihai/)

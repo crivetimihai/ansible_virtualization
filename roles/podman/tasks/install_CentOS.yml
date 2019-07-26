@@ -1,6 +1,8 @@
 ---
-- name: Install podman and tools
-  yum:
-    name: "{{ podman_packages }}"
+# Install podman on CentOS
+
+- name: Install CentOS packages
+  package:
+    name: "{{ centos_packages }}"
     state: present
   become: yes

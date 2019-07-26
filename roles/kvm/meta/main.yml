@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Mihai Criveti
-  description: KVM
+  description: Kvm
   company: Mihai Criveti
   license: MIT
   min_ansible_version: 2.4
@@ -26,9 +26,6 @@ galaxy_info:
         - buster
 
   galaxy_tags:
-    - kvm
-    - hypervisor
-    - virtualization
     - debian
     - ubuntu
     - rhel

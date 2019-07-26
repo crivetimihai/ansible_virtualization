@@ -16,9 +16,4 @@
 - include: install_Debian.yml
   when: ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_version']|int >= 10
 
-- include: selinux.yml
-  when:
-    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "Fedora" or ansible_facts['distribution'] == "CentOS"
-    - ansible_selinux.status == "enabled"
-
 - include: configure.yml

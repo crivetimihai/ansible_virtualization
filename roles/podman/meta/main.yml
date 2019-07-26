@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Mihai Criveti
-  description: Podman, buildah and skopeo container tools
+  description: Podman
   company: Mihai Criveti
   license: MIT
   min_ansible_version: 2.4
@@ -21,12 +21,11 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - bionic
+    - name: Debian
+      versions:
+        - buster
 
   galaxy_tags:
-    - podman
-    - skopeo
-    - buildah
-    - virtualization
     - debian
     - ubuntu
     - rhel

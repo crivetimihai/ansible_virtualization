@@ -1,9 +1,8 @@
 ---
-# Install KVM on Fedora
+# Install kvm on Fedora
 
-- name: install KVM packages on Fedora 30+
-  yum:
-    name: "{{ kvm_required_packages_fedora_30 }}"
+- name: install Fedora packages
+  package:
+    name: "{{ fedora_packages }}"
     state: present
-  when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_version']|int >=30
   become: yes

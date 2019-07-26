@@ -1,29 +1,28 @@
 Role Name
 =========
 
-Install Docker CE.
+docker_ce
 
 Requirements
 ------------
 
-Functional package management system.
+- For RHEL, a Red Hat subscription or functional local repository.
 
 Role Variables
 --------------
 
-- `docker_users` - list of users to add to `docker` group. Defaults to `ansible_user`.
 
 Dependencies
 ------------
 
-- n/a
+- For Red Hat, subscription-manager.
 
 Example Playbook
 ----------------
 
     - hosts: servers
       roles:
-         - { role: crivetimihai.virtualization.docker_ce, docker_users: vagrant }
+         - role: docker_ce
 
 License
 -------
@@ -33,4 +32,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/crivetimihai/)  
+- [Mihai Criveti](https://www.linkedin.com/in/crivetimihai/)

@@ -1,5 +1,6 @@
 ---
 # ansible-playbook playbook.yml
+
 - hosts: all
   connection: ssh
   become: yes

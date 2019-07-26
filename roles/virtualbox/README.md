@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Install VirtualBox.
+virtualbox
 
 Requirements
 ------------
@@ -11,7 +11,6 @@ Requirements
 Role Variables
 --------------
 
-- `vbox-users` - create user / add to vboxusers group. By default, this will create a `vagrant` user.
 
 Dependencies
 ------------

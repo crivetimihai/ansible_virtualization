@@ -1,6 +1,8 @@
 ---
-- name: Install podman and tools
-  yum:
-    name: "{{ podman_packages }}"
+# Install podman on Fedora
+
+- name: install Fedora packages
+  package:
+    name: "{{ fedora_packages }}"
     state: present
   become: yes

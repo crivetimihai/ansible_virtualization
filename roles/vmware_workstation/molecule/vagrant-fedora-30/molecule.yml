@@ -1,6 +1,7 @@
 ---
 dependency:
   name: galaxy
+  role-file: requirements.yml
 driver:
   name: vagrant
   provider:
@@ -9,46 +10,19 @@ lint:
   name: yamllint
 platforms:
   - name: vmware_workstation-fedora-30
-    box: fedora/30-cloud-base
+    box: fedora/30
 provisioner:
   name: ansible
+  log: True
+  playbooks:
+    vagrant:
+      prepare: ../resources/playbooks/prepare.yml
+    converge: ../resources/playbooks/playbook.yml
+    verify: ../resources/playbooks/verify.yml
   lint:
     name: ansible-lint
-scenario:
-  name: vagrant-fedora-30
-  create_sequence:
-    - create
-    - prepare
-  check_sequence:
-    - destroy
-    - dependency
-    - create
-    - prepare
-    - converge
-    - check
-    - destroy
-  converge_sequence:
-    - dependency
-    - create
-    - prepare
-    - converge
-  destroy_sequence:
-    - cleanup
-    - destroy
-  test_sequence:
-    - lint
-    - destroy
-    - dependency
-    - syntax
-    - create
-    - prepare
-    - converge
-    - idempotence
-    - side_effect
-    - verify
-    - cleanup
-    - destroy
 verifier:
   name: goss
+  directory: ../resources/tests
   lint:
     name: yamllint

@@ -1,6 +1,8 @@
 ---
-- name: install KVM packages on Ubuntu 18.04
-  apt:
-    update_cache: yes
-    name: "{{ kvm_required_packages_ubuntu_1804 }}"
+# Install kvm on Ubuntu
+
+- name: install Ubuntu packages
+  package:
+    name: "{{ ubuntu_packages }}"
+    state: present
   become: yes

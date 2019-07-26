@@ -9,6 +9,8 @@ Ansible Virtualization Collection
 - LXC/LXD
 - Docker-CE
 - Podman (with Buildah and Skopeo)
+- Packer
+- Vagrant
 
 Tested on:
 ----------

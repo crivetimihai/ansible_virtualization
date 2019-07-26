@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Install KVM.
+kvm
 
 Requirements
 ------------
@@ -11,7 +11,6 @@ Requirements
 Role Variables
 --------------
 
-- `kvm_required_packages_centos` - list of packages to install on CentOS. Defined in `vars/main.yml`.
 
 Dependencies
 ------------

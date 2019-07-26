@@ -1,7 +1,7 @@
 ---
 # vars file for kvm
 
-kvm_required_packages_centos_7:
+centos_packages:
   - policycoreutils-python
   - qemu-kvm
   - qemu-img
@@ -15,7 +15,7 @@ kvm_required_packages_centos_7:
   - virt-top
   - genisoimage
 
-kvm_required_packages_rhel_8:
+redhat_packages:
   - policycoreutils-python-utils
   - qemu-kvm
   - qemu-img
@@ -28,7 +28,7 @@ kvm_required_packages_rhel_8:
   - virt-top
   - genisoimage
 
-kvm_required_packages_fedora_30:
+fedora_packages:
   - policycoreutils-python-utils
   - qemu-kvm
   - qemu-img
@@ -41,7 +41,7 @@ kvm_required_packages_fedora_30:
   - virt-top
   - genisoimage
 
-kvm_required_packages_ubuntu_1804:
+debian_packages:
   - policycoreutils-python-utils
   - qemu-kvm
   - qemu-utils
@@ -55,7 +55,7 @@ kvm_required_packages_ubuntu_1804:
   - virt-top
   - genisoimage
 
-kvm_required_packages_debian_10:
+ubuntu_packages:
   - policycoreutils-python-utils
   - qemu-kvm
   - qemu-utils

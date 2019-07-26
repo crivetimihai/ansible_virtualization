@@ -1,0 +1,8 @@
+---
+# Install vagrant on Ubuntu
+
+- name: install Ubuntu packages
+  package:
+    name: "{{ ubuntu_packages }}"
+    state: present
+  become: yes

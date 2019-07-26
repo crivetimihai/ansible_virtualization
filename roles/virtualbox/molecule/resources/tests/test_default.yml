@@ -1,0 +1,17 @@
+# Molecule managed
+---
+file:
+  /usr/bin/virtualbox:
+    exists: true
+    owner: root
+    group: root
+
+command:
+  help:
+    exit-status: 0
+    exec: "virtualbox --help"
+    stdout:
+      - "/VirtualBox/"
+    stderr: []
+    timeout: 10000      # in milliseconds
+    skip: false

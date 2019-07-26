@@ -1,0 +1,21 @@
+[all:vars]
+ansible_user=vagrant
+ansible_ssh_pass=vagrant
+
+[fedora]
+fedora30 ansible_host=fedora30
+
+[fedora:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[centos]
+centos7 ansible_host=centos7
+
+[rhel]
+rhel8 ansible_host=rhel8
+
+[ubuntu]
+ubuntu1804 ansible_host=ubuntu1804
+
+[debian]
+debian10 ansible_host=debian10

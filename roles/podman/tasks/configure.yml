@@ -1,5 +1,5 @@
 ---
-# Configure
+# Configure podman
 
 - name: set user.max_user_namespaces
   sysctl:

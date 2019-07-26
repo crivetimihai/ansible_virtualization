@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Mihai Criveti
-  description: Ansible Galaxy Collection - Role
+  description: Vagrant
   company: Mihai Criveti
   license: MIT
   min_ansible_version: 2.4
