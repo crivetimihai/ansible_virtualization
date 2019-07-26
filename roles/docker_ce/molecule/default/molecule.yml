@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: docker_ce-centos-7.6
+  - name: docker_ce_centos7.6
     image: centos:7.6.1810
     dockerfile: ../resources/Dockerfile.j2
     privileged: True

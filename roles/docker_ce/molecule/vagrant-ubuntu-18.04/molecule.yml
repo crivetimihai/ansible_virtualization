@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: docker_ce-ubuntu-18.04
+  - name: docker_ce_ubuntu1804
     box: ubuntu/bionic64
 provisioner:
   name: ansible

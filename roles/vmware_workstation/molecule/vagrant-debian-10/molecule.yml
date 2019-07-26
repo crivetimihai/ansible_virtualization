@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vmware_workstation-debian-10
+  - name: vmware_workstation_debian10
     box: debian/buster64
 provisioner:
   name: ansible

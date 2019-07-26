@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: podman-ubuntu-18.04
+  - name: podman_ubuntu1804
     box: ubuntu/bionic64
 provisioner:
   name: ansible

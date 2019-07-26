@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: virtualbox-centos-7
+  - name: virtualbox_centos7
     image: centos:7
     dockerfile: ../resources/Dockerfile.j2
     pre_build_image: False

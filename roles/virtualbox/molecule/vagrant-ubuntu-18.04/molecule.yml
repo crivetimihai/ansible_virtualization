@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: virtualbox-ubuntu-18.04
+  - name: virtualbox_ubuntu1804
     box: ubuntu/bionic64
 provisioner:
   name: ansible

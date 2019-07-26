@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vmware_workstation-fedora-30
+  - name: vmware_workstation_fedora30
     box: fedora/30
 provisioner:
   name: ansible

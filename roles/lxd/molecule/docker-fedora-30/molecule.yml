@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: lxd-fedora-30
+  - name: lxd_fedora30
     image: fedora:30
     dockerfile: ../resources/Dockerfile.j2
     pre_build_image: False

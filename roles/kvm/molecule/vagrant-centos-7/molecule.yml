@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: kvm-centos-7
+  - name: kvm_centos7
     box: centos/7
 provisioner:
   name: ansible

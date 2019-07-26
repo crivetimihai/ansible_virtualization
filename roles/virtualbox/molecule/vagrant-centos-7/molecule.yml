@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: virtualbox-centos-7
+  - name: virtualbox_centos7
     box: centos/7
 provisioner:
   name: ansible

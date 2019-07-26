@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: docker_ce-fedora-30
+  - name: docker_ce_fedora30
     box: fedora/30
 provisioner:
   name: ansible

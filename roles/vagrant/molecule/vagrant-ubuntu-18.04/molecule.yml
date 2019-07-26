@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vagrant-ubuntu-18.04
+  - name: vagrant_ubuntu1804
     box: ubuntu/bionic64
 provisioner:
   name: ansible

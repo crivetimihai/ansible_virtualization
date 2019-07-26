@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: kvm-rhel-7
+  - name: kvm_rhel7
     image: ubi
     registry:
       url: registry.access.redhat.com/ubi7

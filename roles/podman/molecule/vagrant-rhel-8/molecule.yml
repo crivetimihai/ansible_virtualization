@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: podman-rhel-8
+  - name: podman_rhel8
     box: cmihai/rhel-8-base
 provisioner:
   name: ansible

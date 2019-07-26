@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: virtualbox-fedora-30
+  - name: virtualbox_fedora30
     box: fedora/30
 provisioner:
   name: ansible
