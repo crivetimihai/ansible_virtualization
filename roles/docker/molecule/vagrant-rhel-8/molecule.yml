@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: docker_rhel8
+  - name: docker-rhel-8
     box: cmihai/rhel-8-base
 provisioner:
   name: ansible

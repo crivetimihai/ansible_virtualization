@@ -9,8 +9,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: docker_fedora30
-    box: fedora/30
+  - name: docker-fedora-30
+    box: fedora/30-cloud-base
 provisioner:
   name: ansible
   log: True

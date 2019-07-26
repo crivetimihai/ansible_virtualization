@@ -10,7 +10,7 @@ lint:
   name: yamllint
 platforms:
   - name: vagrant-fedora-30
-    box: fedora/30
+    box: fedora/30-cloud-base
 provisioner:
   name: ansible
   log: True
