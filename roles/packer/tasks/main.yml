@@ -1,15 +1,20 @@
 ---
 # tasks file for packer
 
+- name: install unzip
+  package:
+    name: unzip
+    state: present
+
 - name: download packer zip
   get_url:
     url: "{{ packer_zip_url }}"
-    checksum: sha256: {{ packer_checksum_url }}
+    checksum: "sha256:{{ packer_sha256_url }}"
     dest: /tmp/packer.zip
 
 - name: unpack packer
   unarchive:
-    src: "{{ packer_zip }}"
+    src: /tmp/packer.zip
     dest: /usr/local/bin
     copy: no
 

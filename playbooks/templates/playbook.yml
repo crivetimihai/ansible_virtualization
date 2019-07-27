@@ -13,3 +13,5 @@
     - role: crivetimihai.virtualization.virtualbox
     - role: crivetimihai.virtualization.podman
     - role: crivetimihai.virtualization.docker
+    - role: crivetimihai.virtualization.vagrant
+    - role: crivetimihai.virtualization.packer

@@ -16,6 +16,4 @@
   command: /snap/bin/lxd init --auto
   args:
     creates: /var/snap/lxd/common/lxd/storage-pools/default
-  become: no
-  become_user: "{{ item }}"
-  with_items: "{{ lxd_users }}"
+  become: yes

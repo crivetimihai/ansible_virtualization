@@ -1,10 +1,10 @@
 namespace: "crivetimihai"
 name: "virtualization"
-version: "1.0.16"
+version: "1.0.17"
 readme: "README.md"
 authors:
   - "Mihai Criveti (https://twitter.com/crivetimihai)"
-description: "Collection of Virtualization Software for Linux: VirtualBox, KVM, VMware, LXD, Docker-CE, Podman"
+description: "Collection of Virtualization Software for Linux: VirtualBox, KVM, VMware, LXD, Docker-CE, Podman, Vagrant, Packer"
 license:
   - "MIT"
 tags:
@@ -20,6 +20,8 @@ tags:
   - podman
   - buildah
   - skopeo
+  - vagrant
+  - packer
   - collection
 repository: "https://www.github.com/crivetimihai/ansible_virtualization"
 homepage: "https://www.github.com/crivetimihai/ansible_virtualization"

@@ -12,3 +12,5 @@
     - role: kvm
     - role: virtualbox
     - role: docker
+    - role: vagrant
+    - role: packer

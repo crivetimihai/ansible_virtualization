@@ -1,7 +1,7 @@
 # Molecule managed
 ---
 file:
-  /usr/local/bin/packer:
+  /usr/bin/vagrant:
     exists: true
     owner: root
     group: root
@@ -9,9 +9,9 @@ file:
 command:
   help:
     exit-status: 0
-    exec: "packer --help"
+    exec: "vagrant --help 2>&1"
     stdout:
-      - "/packer/"
+      - "/vagrant/"
     stderr: []
     timeout: 10000      # in milliseconds
     skip: false
