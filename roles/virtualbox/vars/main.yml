@@ -26,8 +26,6 @@ vboxdrv_required_packages_centos_7:
   - libgomp
   - glibc-headers
   - glibc-devel
-  - kernel-headers
-  - kernel-devel
   - "kernel-headers-{{ ansible_kernel }}"
   - "kernel-devel-{{ ansible_kernel }}"
   - dkms
@@ -41,8 +39,6 @@ vboxdrv_required_packages_rhel_8:
   - libgomp
   - glibc-headers
   - glibc-devel
-  - kernel-headers
-  - kernel-devel
   - "kernel-headers-{{ ansible_kernel }}"
   - "kernel-devel-{{ ansible_kernel }}"
   - dkms
@@ -56,8 +52,6 @@ vboxdrv_required_packages_fedora_30:
   - libgomp
   - glibc-headers
   - glibc-devel
-  - kernel-headers
-  - kernel-devel
   - "kernel-headers-{{ ansible_kernel }}"
   - "kernel-devel-{{ ansible_kernel }}"
   - dkms

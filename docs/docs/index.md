@@ -11,6 +11,9 @@ Ansible Galaxy Roles
 - VMware Workstation
 - Docker-CE
 - Podman (with Buildah and Skopeo)
+- LXD
+- Packer
+- Vagrant
 
 Tested On
 ---------
@@ -18,6 +21,8 @@ Tested On
 - CentOS 7
 - RHEL 8
 - Fedora 30
+- Debian 10
+- Ubuntu 18.04
 
 Example
 -------
