@@ -9,18 +9,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vagrant-centos-7
-    image: centos:7
+  - name: packer-ubuntu-1804
+    image: ubuntu:18.04
     dockerfile: ../resources/Dockerfile.j2
     pre_build_image: False
-    privileged: True
-    volume_mounts:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
-    command: "/usr/sbin/init"
-    environment:
-      container: docker
 provisioner:
   name: ansible
+  extra_vars:
+    ansible_python_interpreter: /usr/bin/python3
   log: True
   playbooks:
     vagrant:

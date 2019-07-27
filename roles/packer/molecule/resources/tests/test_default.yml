@@ -1,7 +1,7 @@
 # Molecule managed
 ---
 file:
-  /usr/bin/packer:
+  /usr/local/bin/packer:
     exists: true
     owner: root
     group: root

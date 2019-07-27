@@ -9,10 +9,9 @@ file:
 command:
   help:
     exit-status: 0
-    exec: "virsh --version"
+    exec: "virsh help"
     stdout:
-      - "/libvirt/"
-      - "/QEMU/"
+      - "/virsh/"
     stderr: []
     timeout: 10000      # in milliseconds
     skip: false

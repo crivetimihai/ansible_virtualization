@@ -1,7 +1,7 @@
 # Molecule managed
 ---
 file:
-  /usr/bin/lxd:
+  /usr/bin/lxc:
     exists: true
     owner: root
     group: root
@@ -9,9 +9,9 @@ file:
 command:
   help:
     exit-status: 0
-    exec: "lxd --help"
+    exec: "lxc help"
     stdout:
-      - "/lxd/"
+      - "/lxc/"
     stderr: []
     timeout: 10000      # in milliseconds
     skip: false

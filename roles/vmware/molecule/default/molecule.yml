@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vmware_centos-76
+  - name: vmware-centos-76
     image: centos:7.6.1810
     dockerfile: ../resources/Dockerfile.j2
     privileged: True

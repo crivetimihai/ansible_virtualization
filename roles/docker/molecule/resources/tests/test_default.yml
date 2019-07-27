@@ -13,5 +13,5 @@ command:
     stdout:
       - "/docker/"
     stderr: []
-    timeout: 10000      # in milliseconds
+    timeout: 100000      # in milliseconds
     skip: false

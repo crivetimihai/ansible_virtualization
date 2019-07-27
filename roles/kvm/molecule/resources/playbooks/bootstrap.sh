@@ -11,7 +11,7 @@ if [ $(command -v apt-get) ]; then
     apt-get clean
 elif [ $(command -v dnf) ]; then
     dnf makecache
-    dnf --assumeyes install python3 sudo python3-devel python3-dnf bash
+    dnf --assumeyes install python3 sudo python3-devel python3-dnf bash python3-libselinux
     dnf clean all
 elif [ $(command -v yum) ]; then
     yum makecache fast

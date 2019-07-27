@@ -4,5 +4,5 @@
 - name: install Debian packages
   package:
     name: "{{ debian_packages }}"
-    state: absent
+    state: present
   become: yes

@@ -9,10 +9,12 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vmware_fedora-30
+  - name: vmware-fedora-30
     box: fedora/30-cloud-base
 provisioner:
   name: ansible
+  extra_vars:
+    ansible_python_interpreter: /usr/bin/python3
   log: True
   playbooks:
     vagrant:

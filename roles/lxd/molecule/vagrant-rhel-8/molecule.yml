@@ -9,7 +9,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: lxd-rhel-8
+  - name: kvm-rhel-8
     box: cmihai/rhel-8-base
 provisioner:
   name: ansible

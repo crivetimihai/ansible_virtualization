@@ -9,11 +9,13 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: vmware_rhel-8
+  - name: vmware-rhel-8
     box: cmihai/rhel-8-base
 provisioner:
   name: ansible
   log: True
+  extra_vars:
+    ansible_python_interpreter: /usr/bin/python3
   playbooks:
     vagrant:
       prepare: ../resources/playbooks/prepare.yml

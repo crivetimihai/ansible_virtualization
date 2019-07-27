@@ -9,18 +9,10 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: lxd-rhel-8
-    image: ubi
-    registry:
-      url: registry.access.redhat.com/ubi8
+  - name: vagrant-debian-10
+    image: debian:10
     dockerfile: ../resources/Dockerfile.j2
     pre_build_image: False
-    privileged: True
-    volume_mounts:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
-    command: "/usr/sbin/init"
-    environment:
-      container: docker
 provisioner:
   name: ansible
   extra_vars:

@@ -13,12 +13,6 @@ platforms:
     image: fedora:30
     dockerfile: ../resources/Dockerfile.j2
     pre_build_image: False
-    privileged: True
-    volume_mounts:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
-    command: "/usr/sbin/init"
-    environment:
-      container: docker
 provisioner:
   name: ansible
   extra_vars:
