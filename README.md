@@ -1,7 +1,7 @@
 Ansible Virtualization Collection
 =================================
 
-[Ansible Galaxy Collection: Virtualization](https://galaxy.ansible.com/crivetimihai/Virtualization):
+[Ansible Galaxy Collection: Virtualization](https://galaxy.ansible.com/crivetimihai/virtualization):
 
 - KVM
 - VirtualBox
