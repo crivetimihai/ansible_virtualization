@@ -47,6 +47,8 @@ mazer install crivetimihai.virtualization
     - role: crivetimihai.virtualization.virtualbox
     - role: crivetimihai.virtualization.podman
     - role: crivetimihai.virtualization.docker
+    - role: crivetimihai.virtualization.packer
+    - role: crivetimihai.virtualization.vagrant
 ```
 
 ### Running the playbook
@@ -74,3 +76,7 @@ molecule converge -s rhel-8
 # Create a new role
 molecule init role -r new_role -d docker
 ```
+
+# See also:
+
+- [Ansible Workstation Collection](https://galaxy.ansible.com/crivetimihai/workstation)
