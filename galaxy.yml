@@ -1,6 +1,6 @@
 namespace: "crivetimihai"
 name: "virtualization"
-version: "1.0.19"
+version: "1.0.20"
 readme: "README.md"
 authors:
   - "Mihai Criveti (https://twitter.com/crivetimihai)"
