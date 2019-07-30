@@ -9,11 +9,27 @@ _sshd_service_name:
 
 sshd_service_name: "{{ _sshd_service_name[ansible_distribution] | default(_sshd_service_name['default']) }}"
 
-# Packages to install
+# VMware Tools packages to install
 _packages_vmware_tools:
   all:
     - "open-vm-tools"
   CentOS:
     - "open-vm-tools"
 
+# KVM tools packages to install
+_packages_kvm_tools:
+  all:
+    - "qemu-guest-agent"
+  CentOS:
+    - "qemu-guest-agent"
+
+# VirtualBox tools prereq packages to install
+_packages_virtualbox_tools:
+  all:
+    - "dkms"
+  CentOS:
+    - "gcc"
+
 packages_vmware_tools: "{{ _packages_vmware_tools['all'] + ( _packages_vmware_tools[ansible_distribution] | default([]) ) }}"
+packages_kvm_tools: "{{ _packages_kvm_tools['all'] + ( _packages_kvm_tools[ansible_distribution] | default([]) ) }}"
+packages_virtualbox_tools: "{{ _packages_virtualbox_tools['all'] + ( _packages_virtualbox_tools[ansible_distribution] | default([]) ) }}"

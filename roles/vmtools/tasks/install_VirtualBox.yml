@@ -1,0 +1,8 @@
+---
+# tasks file for packages
+
+- name: install VirtualBox tools prereq packages
+  package:
+    name: "{{ packages_virtualbox_tools }}"
+    state: present
+  become: yes

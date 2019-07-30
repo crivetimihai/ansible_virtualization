@@ -1,0 +1,8 @@
+---
+# tasks file for packages
+
+- name: install KVM tools packages
+  package:
+    name: "{{ packages_kvm_tools }}"
+    state: present
+  become: yes

@@ -16,11 +16,11 @@
         )
       - ansible_virtualization_role == "guest"
 
-- include: install.yml
+- include: install_VirtualBox.yml
   when: ansible_virtualization_type == "virtualbox"
 
-- include: install.yml
+- include: install_VMware.yml
   when: ansible_virtualization_type == "vmware"
 
-- include: install.yml
+- include: install_KVM.yml
   when: ansible_virtualization_type == "kvm"

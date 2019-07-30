@@ -1,7 +1,7 @@
 ---
 # tasks file for packages
 
-- name: install packages
+- name: install VMware tools packages
   package:
     name: "{{ packages_vmware_tools }}"
     state: present
