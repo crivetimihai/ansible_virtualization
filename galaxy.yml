@@ -22,6 +22,7 @@ tags:
   - skopeo
   - vagrant
   - packer
+  - open-vm-tools
   - collection
 repository: "https://www.github.com/crivetimihai/ansible_virtualization"
 homepage: "https://www.github.com/crivetimihai/ansible_virtualization"

@@ -14,5 +14,13 @@
         ) or
         ( ansible_distribution == "Ubuntu" and ( ansible_distribution_version == "18.04" )
         )
+      - ansible_virtualization_role == "guest"
 
 - include: install.yml
+  when: ansible_virtualization_type == "virtualbox"
+
+- include: install.yml
+  when: ansible_virtualization_type == "vmware"
+
+- include: install.yml
+  when: ansible_virtualization_type == "kvm"
