@@ -1,7 +1,7 @@
 Role Name
 =========
 
-vmtools
+Install VM tools (VMware, KVM or VirtualBox) based on detected virtual environment.
 
 Requirements
 ------------

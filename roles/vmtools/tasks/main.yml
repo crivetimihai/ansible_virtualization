@@ -24,3 +24,6 @@
 
 - include: install_KVM.yml
   when: ansible_virtualization_type == "kvm"
+
+- include: configure_KVM.yml
+  when: ansible_virtualization_type == "kvm"

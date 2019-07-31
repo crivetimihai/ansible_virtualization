@@ -27,6 +27,9 @@ _packages_kvm_tools:
 _packages_virtualbox_tools:
   all:
     - "dkms"
+    - "bzip2"
+    - "gcc"
+    - "make"
   CentOS:
     - "gcc"
 
