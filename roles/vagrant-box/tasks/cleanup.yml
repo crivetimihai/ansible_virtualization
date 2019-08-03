@@ -1,0 +1,10 @@
+---
+- name: remove vbox path
+  file:
+    path: "/tmp/vbox"
+    state: absent
+
+- name: rm vbox guest additions iso
+  file:
+    path: "/tmp/VBoxGuestAdditions.iso"
+    state: absent

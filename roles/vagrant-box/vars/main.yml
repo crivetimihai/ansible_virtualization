@@ -1,0 +1,6 @@
+---
+# vars file for rhel-8-base
+
+sudoers_groups:
+  - name: vagrant
+    sudo: true

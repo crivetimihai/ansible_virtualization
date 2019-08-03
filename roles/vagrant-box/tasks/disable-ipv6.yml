@@ -1,0 +1,15 @@
+---
+
+- name: sysctl net.ipv6.conf.all.disable_ipv6=1
+  sysctl:
+    name: net.ipv6.conf.all.disable_ipv6
+    value: 1
+    reload: yes
+  become: yes
+
+- name: sysctl net.ipv6.conf.default.disable_ipv6
+  sysctl:
+    name: net.ipv6.conf.default.disable_ipv6
+    value: 1
+    reload: yes
+  become: yes
