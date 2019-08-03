@@ -1,38 +1,61 @@
 ---
-# vars file for vmtools
-
-# SSH service name
-_sshd_service_name:
-  default: sshd
-  Debian: ssh
-  Ubuntu: ssh
-
-sshd_service_name: "{{ _sshd_service_name[ansible_distribution] | default(_sshd_service_name['default']) }}"
-
-# VMware Tools packages to install
-_packages_vmware_tools:
+# vars file for vmtools: VirtualBox
+# VirtualBox tools prereq packages to install
+_packages_virtualbox_tools:
   all:
-    - "open-vm-tools"
+    - bzip2
+    - gcc
+    - make
+  Debian:
+    - build-essential
+    - "linux-headers-{{ ansible_kernel }}"
+  Ubuntu:
+    - build-essential
+    - "linux-headers-{{ ansible_kernel }}"
   CentOS:
-    - "open-vm-tools"
+    - dkms
+    - "kernel-headers-{{ ansible_kernel }}"
+    - "kernel-devel-{{ ansible_kernel }}"
+  RedHat:
+    - dkms
+    - "kernel-headers-{{ ansible_kernel }}"
+    - "kernel-devel-{{ ansible_kernel }}"
+  Fedora:
+    - dkms
+    - "kernel-headers-{{ ansible_kernel }}"
+    - "kernel-devel-{{ ansible_kernel }}"
+
+packages_virtualbox_tools: "{{ _packages_virtualbox_tools['all'] + ( _packages_virtualbox_tools[ansible_distribution] | default([]) ) }}"
+
+# vars file for vmtools: KVM
+# Service name: qemu-guest-agent
+_service_name_kvm_tools:
+  default: qemu-guest-agent
+
+service_name_kvm_tools: "{{ _service_name_kvm_tools[ansible_distribution] | default(_service_name_kvm_tools['default']) }}"
 
 # KVM tools packages to install
 _packages_kvm_tools:
   all:
     - "qemu-guest-agent"
-  CentOS:
-    - "qemu-guest-agent"
 
-# VirtualBox tools prereq packages to install
-_packages_virtualbox_tools:
+packages_kvm_tools: "{{ _packages_kvm_tools['all'] + ( _packages_kvm_tools[ansible_distribution] | default([]) ) }}"
+
+# vars file for vmtools: VMware
+# Service name: vmtoolsd, vgauthd.service
+_service_name_vmware_tools:
+  default: vmtoolsd
+  Debian: open-vm-tools
+  Ubuntu: open-vm-tools
+
+service_name_vmware_tools: "{{ _service_name_vmware_tools[ansible_distribution] | default(_service_name_vmware_tools['default']) }}"
+
+# VMware Tools packages to install: open-vm-tools-desktop
+_packages_vmware_tools:
   all:
-    - "dkms"
-    - "bzip2"
-    - "gcc"
-    - "make"
-  CentOS:
-    - "gcc"
+    - open-vm-tools
+  Fedora:
+    - open-vm-tools
+    - open-vm-tools-desktop
 
 packages_vmware_tools: "{{ _packages_vmware_tools['all'] + ( _packages_vmware_tools[ansible_distribution] | default([]) ) }}"
-packages_kvm_tools: "{{ _packages_kvm_tools['all'] + ( _packages_kvm_tools[ansible_distribution] | default([]) ) }}"
-packages_virtualbox_tools: "{{ _packages_virtualbox_tools['all'] + ( _packages_virtualbox_tools[ansible_distribution] | default([]) ) }}"

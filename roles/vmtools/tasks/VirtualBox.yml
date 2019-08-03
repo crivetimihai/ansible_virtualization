@@ -1,0 +1,44 @@
+---
+# tasks file for packages
+
+- name: install epel-release on CentOS
+  package:
+    name: epel-release
+    state: present
+  when: ansible_distribution == "CentOS"
+  become: yes
+
+- name: install VirtualBox tools prereq packages
+  package:
+    name: "{{ packages_virtualbox_tools }}"
+    state: present
+  become: yes
+
+- name: download VirtualBox guest additions iso
+  get_url:
+    url: https://download.virtualbox.org/virtualbox/6.0.10/VBoxGuestAdditions_6.0.10.iso
+    checksum: sha256:c8a686f8c7ad9ca8375961ab19815cec6b1f0d2496900a356a38ce86fe8a1325
+    dest: /tmp/VBoxGuestAdditions_6.0.10.iso
+
+- name: create VirtualBox guest additions mountpoint
+  file:
+    name: /tmp/vbox
+    state: directory
+
+- name: mount VirtualBox guest additions iso
+  mount:
+    name: /tmp/vbox
+    src: "/tmp/VBoxGuestAdditions_6.0.10.iso"
+    opts: loop
+    state: mounted
+    fstype: iso9660
+  become: yes
+
+- name: install VirtualBox guest additions
+  command: /tmp/vbox/VBoxLinuxAdditions.run
+  args:
+    creates:
+      - /sbin/rcvboxadd
+  register: command_result
+  failed_when: "'FAILED' in command_result.stderr"
+  become: yes

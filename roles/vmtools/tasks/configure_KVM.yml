@@ -1,9 +1,0 @@
----
-# Configure kvm-tools
-
-- name: Enable service qemu-guest-agent, and start if not started
-  service:
-    name: "{{ service_name_qemu_agent }}"
-    enabled: yes
-    state: started
-  become: yes
