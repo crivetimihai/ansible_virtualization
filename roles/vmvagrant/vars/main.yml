@@ -1,0 +1,6 @@
+---
+# vars file for vmvagrant
+
+sudoers_groups:
+  - name: vagrant
+    sudo: true

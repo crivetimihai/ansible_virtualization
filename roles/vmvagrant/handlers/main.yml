@@ -1,0 +1,6 @@
+---
+# handlers file for vagrantbox
+- name: restart sshd
+  service:
+    name: sshd
+    state: restarted

@@ -1,6 +1,0 @@
----
-# handlers file for rhel-8-base
-- name: restart sshd
-  service:
-    name: sshd
-    state: restarted

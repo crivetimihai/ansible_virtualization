@@ -1,6 +1,6 @@
 namespace: "crivetimihai"
 name: "virtualization"
-version: "1.0.20"
+version: "1.0.21"
 readme: "README.md"
 authors:
   - "Mihai Criveti (https://twitter.com/crivetimihai)"
@@ -22,7 +22,7 @@ tags:
   - skopeo
   - vagrant
   - packer
-  - open-vm-tools
+  - vmtools
   - collection
 repository: "https://www.github.com/crivetimihai/ansible_virtualization"
 homepage: "https://www.github.com/crivetimihai/ansible_virtualization"
