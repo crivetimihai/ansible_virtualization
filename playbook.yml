@@ -1,8 +1,8 @@
 ---
-# ansible-playbook playbook.yml
+# ansible-playbook -i localhost, playbook.yml
 
 - hosts: all
-  connection: ssh
+  connection: local
   become: yes
   gather_facts: yes
   roles:
