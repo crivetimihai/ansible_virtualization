@@ -11,6 +11,8 @@ Ansible Virtualization Collection
 - Podman (with Buildah and Skopeo)
 - Packer
 - Vagrant
+- VM Tools (VMware, VirtualBox and KVM)
+- VMVagrant: setup a virtual machine for vagrant (user, ssh key, etc)
 
 Tested on:
 ----------
