@@ -17,7 +17,6 @@ _packages_virtualbox_tools:
     - "kernel-headers-{{ ansible_kernel }}"
     - "kernel-devel-{{ ansible_kernel }}"
   RedHat:
-    - dkms
     - "kernel-headers-{{ ansible_kernel }}"
     - "kernel-devel-{{ ansible_kernel }}"
   Fedora:
