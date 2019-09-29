@@ -1,0 +1,9 @@
+---
+# ansible-playbook -i localhost, playbook.yml
+
+- hosts: all
+  connection: local
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: vmtools
