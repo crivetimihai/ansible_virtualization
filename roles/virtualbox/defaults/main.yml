@@ -6,14 +6,17 @@ setup_users: yes
 
 # List of users to add to 'vboxusers' group
 vbox_users:
-  - vagrant
+  - cmihai
 
 # VirtualBox major version to install
 virtualbox_version: "6.0"
+
+# Full version number
+virtualbox_version_full: "6.0.12"
 
 # Install extensions listed in virtualbox_extpacks_urls
 install_extpacks: yes
 
 # List of VirtualBox extensions to install
 virtualbox_extpack_urls:
-  - "https://download.virtualbox.org/virtualbox/6.0.10/Oracle_VM_VirtualBox_Extension_Pack-6.0.10.vbox-extpack"
+  - "https://download.virtualbox.org/virtualbox/{{ virtualbox_version_full }}/Oracle_VM_VirtualBox_Extension_Pack-{{ virtualbox_version_full }}.vbox-extpack"

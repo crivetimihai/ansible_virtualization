@@ -3,6 +3,7 @@
 
 docker_users:
   - root
+  - cmihai
   #  - "{{ ansible_user }}"
 
 # Use podman and buildah instead, or look at Docker-EE

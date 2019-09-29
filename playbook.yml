@@ -1,16 +1,16 @@
 ---
-# ansible-playbook -i localhost, playbook.yml
+# ansible-playbook -i localhost, playbook.yml -e 'ansible_python_interpreter=/usr/bin/python3'
 
 - hosts: all
   connection: local
   become: yes
   gather_facts: yes
   roles:
-    - role: lxd
-    - role: podman
-    - role: vmware
+    # - role: packer
+    # - role: vagrant
+    # - role: virtualbox
+    # - role: podman
     - role: kvm
-    - role: virtualbox
     - role: docker
-    - role: vagrant
-    - role: packer
+    # - role: lxd
+    # - role: vmware
