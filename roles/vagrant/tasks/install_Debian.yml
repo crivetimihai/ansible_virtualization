@@ -2,7 +2,7 @@
 # Install vagrant on Debian
 
 - name: install Debian packages
-  package:
-    name: "{{ debian_packages }}"
-    state: absent
+  apt:
+    deb: "{{ item }}"
+  loop: "{{ debian_packages }}"
   become: yes
