@@ -6,7 +6,7 @@ setup_users: yes
 
 # List of users to add to 'vboxusers' group
 vbox_users:
-  - cmihai
+  - vagrant
 
 # VirtualBox major version to install
 virtualbox_version: "6.0"
