@@ -16,7 +16,3 @@
 - name: 'Ubuntu'
   include_tasks: install_Ubuntu.yml
   when: ansible_facts['distribution'] == "Ubuntu" and ansible_facts['distribution_version'] == "18.04"
-
-- name: 'Configure'
-  include_tasks: configure.yml
-  when: ansible_facts['distribution'] != 'RedHat'

@@ -7,7 +7,7 @@
     state: absent
   become: yes
 
-- name: add Docker apt signing key
+- name: Add Docker apt signing key
   apt_key:
     url: "{{ item }}"
     state: present
@@ -15,7 +15,7 @@
     - https://download.docker.com/linux/ubuntu/gpg
   become: yes
 
-- name: setup Docker apt repository on Ubuntu
+- name: Setup Docker apt repository on Ubuntu
   apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
     state: present
@@ -34,3 +34,5 @@
     name: "{{ ubuntu_docker_packages }}"
     state: present
   become: yes
+
+- import_tasks: configure.yml

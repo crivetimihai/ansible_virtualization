@@ -1,7 +1,7 @@
 ---
 # Install vagrant on RedHat
 
-- name: install RedHat packages
+- name: Install RedHat packages
   package:
     name: "{{ redhat_packages }}"
     state: present

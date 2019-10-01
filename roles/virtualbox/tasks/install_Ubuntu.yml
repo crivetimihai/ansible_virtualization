@@ -7,7 +7,7 @@
     state: present
   become: yes
 
-- name: add Virtualbox apt signing key
+- name: Add Virtualbox apt signing key
   apt_key:
     url: "{{ item }}"
     state: present
@@ -16,20 +16,26 @@
     - https://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc
   become: yes
 
-- name: setup VirtualBox apt repository on Ubuntu
+- name: Setup VirtualBox apt repository on Ubuntu
   apt_repository:
     repo: "deb https://download.virtualbox.org/virtualbox/debian bionic contrib"
     state: present
   become: yes
 
-- name: install VirtualBox
+- name: Install VirtualBox
   package:
     name: "virtualbox-{{ virtualbox_version }}"
     state: present
   become: yes
 
-- name: install VirtualBox vboxdrv requirements on Ubuntu
+- name: Install VirtualBox vboxdrv requirements on Ubuntu
   package:
     name: "{{ vboxdrv_required_packages_ubuntu_1804 }}"
     state: present
   become: yes
+
+- import_tasks: configure.yml
+
+- name: 'Extension Pack'
+  include_tasks: extensions.yml
+  when: install_extpacks
