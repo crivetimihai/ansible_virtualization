@@ -5,18 +5,18 @@
   include_tasks: install_CentOS.yml
   when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_version']|int <= 7
 
-- name: 'RedHat'
-  include_tasks: install_RedHat.yml
-  when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_version']|int <= 8
+- name: 'Debian'
+  include_tasks: install_Debian.yml
+  when: ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_version']|int >= 10
 
 - name: 'Fedora'
   include_tasks: install_Fedora.yml
   when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_version']|int == 30
 
+- name: 'RedHat'
+  include_tasks: install_RedHat.yml
+  when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_version']|int <= 8
+
 - name: 'Ubuntu'
   include_tasks: install_Ubuntu.yml
   when: ansible_facts['distribution'] == "Ubuntu" and ansible_facts['distribution_version'] == "18.04"
-
-- name: 'Debian'
-  include_tasks: install_Debian.yml
-  when: ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_version']|int >= 10
