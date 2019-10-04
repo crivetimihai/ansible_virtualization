@@ -14,8 +14,8 @@ virtualbox_version: "6.0"
 # Full version number
 virtualbox_version_full: "6.0.12"
 
-# Install extensions listed in virtualbox_extpacks_urls
-install_extpacks: yes
+# Install extensions listed in virtualbox_extpacks_urls (requires license)
+install_extpacks: no
 
 # List of VirtualBox extensions to install
 virtualbox_extpack_urls:
