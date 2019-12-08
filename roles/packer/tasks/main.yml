@@ -5,6 +5,7 @@
   package:
     name: unzip
     state: present
+  become: yes
 
 - name: download packer zip
   get_url:
@@ -17,6 +18,7 @@
     src: /tmp/packer.zip
     dest: /usr/local/bin
     copy: no
+  become: yes
 
 - name: remove packer zip
   file:

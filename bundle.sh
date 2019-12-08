@@ -4,7 +4,7 @@
 set -e
 
 # Run lint
-yamllint roles/*
+#yamllint roles/*
 ansible-lint roles/*
 
 # Release
