@@ -8,7 +8,7 @@
     state: present
   become: yes
 
-- name: add Virtualbox apt signing key
+- name: Add Virtualbox apt signing key
   apt_key:
     url: "{{ item }}"
     state: present
@@ -17,22 +17,28 @@
     - https://www.virtualbox.org/download/oracle_vbox.asc
   become: yes
 
-- name: setup VirtualBox apt repository on Debian
+- name: Setup VirtualBox apt repository on Debian
   apt_repository:
     repo: "deb https://download.virtualbox.org/virtualbox/debian buster contrib"
     state: present
   become: yes
 
-- name: install VirtualBox
+- name: Install VirtualBox
   apt:
     update_cache: yes
     name: "virtualbox-{{ virtualbox_version }}"
     state: present
   become: yes
 
-- name: install VirtualBox vboxdrv requirements on Debian
+- name: Install VirtualBox vboxdrv requirements on Debian
   apt:
     name: "{{ vboxdrv_required_packages_debian_10 }}"
     state: present
   when: ansible_facts['distribution'] == "Debian"
   become: yes
+
+- import_tasks: configure.yml
+
+- name: 'Extension Pack'
+  include_tasks: extensions.yml
+  when: install_extpacks

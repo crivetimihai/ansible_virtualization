@@ -23,3 +23,5 @@
     name: docker-ce, docker-ce-cli, containerd.io
     state: present
   become: yes
+
+- import_tasks: configure.yml

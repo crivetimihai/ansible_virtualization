@@ -1,7 +1,7 @@
 ---
 # Install vagrant on Fedora
 
-- name: install Fedora packages
+- name: Install Fedora packages
   package:
     name: "{{ fedora_packages }}"
     state: present

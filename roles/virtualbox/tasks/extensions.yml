@@ -5,7 +5,7 @@
     state: directory
     mode: '0777'
 
-- name: download extpack
+- name: Download extpack
   get_url:
     dest: /tmp/vbox-extpacks/
     url: "{{ item }}"
@@ -20,7 +20,7 @@
   #     var: item.path
   #   with_items: "{{ extpacks.files }}"
 
-- name: check installed extpacks
+- name: Check installed extpacks
   shell: |
       set -o pipefail
       vboxmanage list extpacks | grep Usable
@@ -30,7 +30,7 @@
   ignore_errors: yes
   changed_when: False
 
-- name: install extpacks
+- name: Install extpacks
   command: VBoxManage extpack install --replace "{{ item.path }}" --accept-license=56be48f923303c8cababb0bb4c478284b688ed23f16d775d729b89a2e8e5f9eb
   with_items: "{{ extpacks.files }}"
   when: "'false' not in extpack_installed.stdout"
