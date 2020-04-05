@@ -5,7 +5,7 @@
   when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_version']|int <= 7
 
 - include: install_Fedora.yml
-  when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_version']|int == 30
+  when: ansible_facts['distribution'] == "Fedora" and ansible_facts['distribution_version']|int >= 30
 
 - include: install_Ubuntu.yml
   when: ansible_facts['distribution'] == "Ubuntu" and ansible_facts['distribution_version'] == "18.04"
