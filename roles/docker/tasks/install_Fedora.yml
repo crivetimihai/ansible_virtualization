@@ -12,8 +12,8 @@
 
 - name: Setup yum repository
   get_url:
-    url: https://download.docker.com/linux/centos/docker-ce.repo
-    checksum: "sha256:6650718e0fe5202ae7618521f695d43a8bc051c539d7570f0edbfa5b4916f218"
+    url: https://download.docker.com/linux/fedora/docker-ce.repo
+    checksum: "sha256:3af973c1f2e16a032a11074eb22b440894ad4936c9ca86b666f8cf8342b7bea7"
     dest: /etc/yum.repos.d/docker-ce.repo
     mode: '0644'
   become: yes
