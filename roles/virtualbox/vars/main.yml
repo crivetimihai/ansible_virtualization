@@ -32,7 +32,7 @@ vboxdrv_required_packages_centos_7:
 
 vboxdrv_required_packages_rhel_8:
   - binutils
-  - qt
+  - qt5-qtbase
   - gcc
   - make
   - patch

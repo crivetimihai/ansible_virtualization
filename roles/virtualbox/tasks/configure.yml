@@ -8,7 +8,9 @@
 
 - name: rebuild kernel modules
   command: /usr/lib/virtualbox/vboxdrv.sh setup
-  when: "'is loaded' not in vboxdrv_status.stdout"
+  when:
+    - "'is loaded' not in vboxdrv_status.stdout"
+    - "'are loaded' not in vboxdrv_status.stdout"
   become: yes
 
 - name: setup VirtualBox user
