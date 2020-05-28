@@ -11,6 +11,7 @@ lint:
 platforms:
   - name: virtualbox-rhel-8
     box: cmihai/rhel-8-base
+    memory: 768
 provisioner:
   name: ansible
   log: True
