@@ -18,7 +18,7 @@
 
 - name: setup VirtualBox apt repository on Ubuntu
   apt_repository:
-    repo: "deb https://download.virtualbox.org/virtualbox/debian bionic contrib"
+    repo: "deb https://download.virtualbox.org/virtualbox/debian {{ ansible_facts['distribution_release'] }} contrib"
     state: present
   become: yes
 
